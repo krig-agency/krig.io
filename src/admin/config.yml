@@ -1,12 +1,12 @@
 backend:
   name: github
-  repo: your_name/repo_name
+  repo: krig-agency/krig.io
 
-media_folder: "static/uploads"
-public_folder: "/uploads"
+  media_folder: "static/uploads"
+  public_folder: "/uploads"
 
-collections:
-  - name: "posts"
+  collections:
+    - name: "posts"
     label: "Posts"
     folder: "posts"
     create: true
