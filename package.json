@@ -11,6 +11,10 @@
     "@gridsome/transformer-remark": "^0.6.4",
     "gridsome": "^0.7.0",
     "gridsome-plugin-netlify-cms": "^1.0.9",
-    "netlify-cms": "^2.10.181"
+    "netlify-cms": "^2.10.181",
+    "vue-plugin-animejs": "^1.0.0",
+    "vue-resize-text": "^0.1.1",
+    "vue-scrollin": "^0.1.2",
+    "vuejs-toggle-switch": "^1.3.3"
   }
 }

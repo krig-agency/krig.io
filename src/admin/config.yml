@@ -1,12 +1,12 @@
 backend:
-  name: github
-  repo: krig-agency/krig.io
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
 
-  media_folder: "static/uploads"
-  public_folder: "/uploads"
+media_folder: "static/uploads"
+public_folder: "/uploads"
 
-  collections:
-    - name: "posts"
+collections:
+  - name: "posts"
     label: "Posts"
     folder: "posts"
     create: true
@@ -14,5 +14,8 @@ backend:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Excerpt", name: "excerpt", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "date"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Body", name: "body", widget: "markdown"}
+
+local_backend: true
+publish_mode: editorial_workflow
