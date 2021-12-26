@@ -1,14 +1,30 @@
-# Default starter for Gridsome
+# KRIG 2.2
 
-This is the project you get when you run `gridsome create new-project`.
+Website for KRIG.io build with Gridesome and Netlify CMS.
 
-### 1. Install Gridsome CLI tool if you don't have
+### Requirements
 
-`npm install --global @gridsome/cli`
+* Node.js > 8.3
+* Yarn
+* Gridsome CLI
 
-### 2. Create a Gridsome project
+### 1. Install Node.js
 
-1. `gridsome create my-gridsome-site` to install default starter
-2. `cd my-gridsome-site` to open the folder
-3. `gridsome develop` to start a local dev server at `http://localhost:8080`
-4. Happy coding 🎉🙌
+Download from [nodejs.org](https://nodejs.org/en/download/) or install via Homebrew:
+
+`brew install node`
+
+### 2. Istall Gridsome CLI
+
+`yarn global add @gridsome/cli`
+
+### 3. Clone the project
+
+`git clone https://github.com/krig-agency/krig.io.git`
+
+### 4. Run the project
+
+Run `yarn` from the projekt folder.
+
+Run `gridsom develop` from the projekt folder.
+The site is now running on http://localhost://8080
