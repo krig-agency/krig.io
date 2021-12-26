@@ -8,19 +8,23 @@ Website for KRIG.io build with Gridesome and Netlify CMS.
 * Yarn
 * Gridsome CLI
 
+
 ### 1. Install Node.js
 
 Download from [nodejs.org](https://nodejs.org/en/download/) or install via Homebrew:
 
 `brew install node`
 
+
 ### 2. Istall Gridsome CLI
 
 `yarn global add @gridsome/cli`
 
+
 ### 3. Clone the project
 
 `git clone https://github.com/krig-agency/krig.io.git`
+
 
 ### 4. Run the project
 
