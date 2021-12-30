@@ -1,45 +1,24 @@
 <template>
   <Layout>
+    <section class="welcome-home">
+      <div class="content-wrap">
+        <h1 class="headline-mega">
+          <v-scrollin :speed="50" :misses="4">We are KRIG</v-scrollin>
+        </h1>
+      </div>
 
-    <!-- <g-image src="~/assets/images/krig-logomark.svg" width="500"/> -->
-    <h1>
-      <v-scrollin :speed="50" :misses="4">Vi är KRIG</v-scrollin>
-    </h1>
+      <div class="krig-crew">
+        <g-image src="~/assets/images/krig-crew.png" />
+      </div>
+    </section>
 
-    <toggle-switch
-      :options="myOptions"
-      :disabled="false"
-      @change="updateMap($event.value)"
-      @selected="selectedMethod()"
-      v-model="selectedMapOption"
-      :value="selectedMapOption"
-      :name="name"
-      :group="switchGroup"
-    />
-
-    <!-- <div id="lineDrawing">
-      <svg viewBox="0 0 111.18 74.7">
-        <polygon class="cls-1" points="0.38 49.94 0.44 25.48 69.57 0.38 69.57 24.81 0.38 49.94" />
-        <polygon class="cls-1" points="69.57 0.38 83.29 8.19 83.29 32.63 69.57 24.81 69.57 0.38" />
-        <polygon class="cls-1" points="63.05 15.49 83.29 8.19 83.29 32.63 63.05 39.93 63.05 15.49" />
-        <polygon class="cls-1" points="0.44 25.48 13.98 33.3 13.91 57.75 0.38 49.94 0.44 25.48" />
-        <polygon class="cls-1" points="38.19 24.55 38.19 48.98 13.91 57.75 13.98 33.3 38.19 24.55" />
-        <polygon class="cls-1" points="51.75 24.46 28.33 41.91 28.33 66.04 51.61 49 51.75 24.46" />
-        <polygon class="cls-1" points="51.75 24.46 38.19 24.55 38.19 48.98 51.61 49 51.75 24.46" />
-        <polygon class="cls-1" points="51.75 24.46 51.61 49 28.33 66.04 28.33 41.91 51.75 24.46" />
-        <polygon class="cls-1" points="63.05 15.49 63.05 39.93 95.64 39.76 95.64 15.32 63.05 15.49" />
-        <polyline class="cls-1" points="110.81 48.57 95.64 39.76 95.64 15.32 110.81 24.38" />
-        <polygon class="cls-1" points="28.33 41.91 42.68 49.87 42.61 74.32 28.33 66.04 28.33 41.91" />
-        <polygon class="cls-1" points="42.68 49.87 42.68 74.32 77.12 48.79 77.12 24.38 42.68 49.87" />
-        <rect class="cls-1" x="77.12" y="24.38" width="33.69" height="24.19" />
-      </svg>
-    </div> -->
-
-    <PostList
-    v-for="edge in $page.allPost.edges"
-    :key="edge.node.id"
-    :post="edge.node"
-    />
+    <div class="content-wrap">
+      <PostList
+      v-for="edge in $page.allPost.edges"
+      :key="edge.node.id"
+      :post="edge.node"
+      />
+    </div>
   </Layout>
 </template>
 
@@ -100,22 +79,22 @@ export default {
     title: 'KRIG digital agency'
   },
   methods: {
-  toggleBodyClass(addRemoveClass, className) {
-    const el = document.body;
+    toggleBodyClass(addRemoveClass, className) {
+      const el = document.body;
 
-    if (addRemoveClass === 'addClass') {
-      el.classList.add(className);
-    } else {
-      el.classList.remove(className);
-    }
+      if (addRemoveClass === 'addClass') {
+        el.classList.add(className);
+      } else {
+        el.classList.remove(className);
+      }
+    },
   },
-},
-mounted() {
-  this.toggleBodyClass('addClass', 'mb-0');
-},
-destroyed() {
-  this.toggleBodyClass('removeClass', 'mb-0');
-}
+  mounted() {
+    this.toggleBodyClass('addClass', 'mb-0');
+  },
+  destroyed() {
+    this.toggleBodyClass('removeClass', 'mb-0');
+  }
   // name: 'v-polygon',
   // mounted: function () {
   //
@@ -134,7 +113,8 @@ destroyed() {
 }
 </script>
 
-<style>
+<style lang="scss">
+
 svg {
   fill: #eeff00;
   left: 50%;
@@ -149,5 +129,44 @@ svg {
   stroke-linecap:round;
   stroke-linejoin:round;
   stroke-width:0.75px;
+}
+
+.welcome-home {
+  position: relative;
+  height: 100vh;
+
+  .content-wrap {
+    height: 100vh;
+  }
+
+  .headline-mega {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    margin: 0;
+    text-align: right;
+    line-height: 1;
+
+    .v-scrollin {
+      color: rgba(0, 0, 0, 0.2);
+      mix-blend-mode: multiply;
+      transition: color 0.2s ease-in-out;
+
+      &:hover {
+        color: rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+}
+
+.krig-crew {
+  position: absolute;
+  top: 0;
+  width: 43%;
+
+  img {
+    width: 100%;
+  }
 }
 </style>
