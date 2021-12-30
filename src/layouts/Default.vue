@@ -36,10 +36,12 @@ export default {
   }
 </static-query>
 
-<style>
+<style lang="scss">
 
-html {
-    background-color: #fff;
+html,
+body {
+  height: 100%;
+  background-color: #fff;
 }
 
 body {
@@ -50,7 +52,6 @@ body {
   font-size: 18px;
   line-height: 1.5;
   color: #141414;
-  background-color: white;
 }
 
 h1 {
@@ -63,7 +64,7 @@ h1 {
   font-weight: 800;
 }
 
-h1::after {
+.v-scrollin::after {
   position: absolute;
   top: 0;
   right: -2.5rem;
@@ -72,7 +73,8 @@ h1::after {
   color: blue;
 }
 
-.layout {
+.content-wrap {
+  position: relative;
   max-width: 760px;
   margin: 0 auto;
   padding-left: 20px;
@@ -80,6 +82,8 @@ h1::after {
 }
 
 .header {
+  position: fixed;
+  z-index: 2;
   display: flex;
   justify-content: space-between;
   align-items: center;

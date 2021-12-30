@@ -1,44 +1,46 @@
 <template>
-  <div class="fab">
-    <span class="fab-action-button" @click="showToolbar = !showToolbar">
-      <i class="material-icons fab-action-button-icon">
-        accessibility
-      </i>
-    </span>
-    <transition name="fade">
-      <div class='accessibility-toolbar' v-if="showToolbar">
-        <ul class="accessibility-items">
-          <li class="accessibility-item">
-            <a class="accessibility-menu-item" :data-tooltip="invertColorsText" v-bind:class="{ active: accessibilityStates.inverted }" @click="toggleState('inverted')" :aria-label="invertColorsText">
-              <i class="material-icons accessibility-menu-item-icon">
-                invert_colors
-              </i>
-            </a>
-          </li>
-          <li>
-            <a class="accessibility-menu-item" :data-tooltip="highlightLinksText" v-bind:class="{ active: accessibilityStates.highlighted }" @click="toggleState('highlighted')" :aria-label="highlightLinksText">
-              <i class="material-icons accessibility-menu-item-icon">
-                highlight
-              </i>
-            </a>
-          </li>
-          <li>
-            <a class="accessibility-menu-item" :data-tooltip="grayscaleText" v-bind:class="{ active: accessibilityStates.greyscaled }" @click="toggleState('greyscaled')" :aria-label="grayscaleText">
-              <i class="material-icons accessibility-menu-item-icon">
-                format_color_reset
-              </i>
-            </a>
-          </li>
-          <li>
-            <a class="accessibility-menu-item" :data-tooltip="accessibileFontSizeText" v-bind:class="{ active: accessibilityStates.accessibileFontSize }" @click="toggleState('accessibileFontSize')" :aria-label="accessibileFontSizeText">
-              <i class="material-icons accessibility-menu-item-icon">
-                format_size
-              </i>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </transition>
+  <div class="ux-options">
+    <div class="ux-options__menu">
+      <span class="fab-action-button" @click="showToolbar = !showToolbar">
+        <i class="material-icons fab-action-button-icon">
+          settings
+        </i>
+      </span>
+      <transition name="fade">
+        <div class='accessibility-toolbar' v-if="showToolbar">
+          <ul class="accessibility-items">
+            <li class="accessibility-item">
+              <a class="accessibility-menu-item" :data-tooltip="invertColorsText" v-bind:class="{ active: accessibilityStates.inverted }" @click="toggleState('inverted')" :aria-label="invertColorsText">
+                <i class="material-icons accessibility-menu-item-icon">
+                  invert_colors
+                </i>
+              </a>
+            </li>
+            <li class="accessibility-item">
+              <a class="accessibility-menu-item" :data-tooltip="highlightLinksText" v-bind:class="{ active: accessibilityStates.highlighted }" @click="toggleState('highlighted')" :aria-label="highlightLinksText">
+                <i class="material-icons accessibility-menu-item-icon">
+                  highlight
+                </i>
+              </a>
+            </li>
+            <li class="accessibility-item">
+              <a class="accessibility-menu-item" :data-tooltip="grayscaleText" v-bind:class="{ active: accessibilityStates.greyscaled }" @click="toggleState('greyscaled')" :aria-label="grayscaleText">
+                <i class="material-icons accessibility-menu-item-icon">
+                  format_color_reset
+                </i>
+              </a>
+            </li>
+            <li class="accessibility-item">
+              <a class="accessibility-menu-item" :data-tooltip="accessibileFontSizeText" v-bind:class="{ active: accessibilityStates.accessibileFontSize }" @click="toggleState('accessibileFontSize')" :aria-label="accessibileFontSizeText">
+                <i class="material-icons accessibility-menu-item-icon">
+                  format_size
+                </i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </transition>
+    </div>
   </div>
 </template>
 
@@ -67,12 +69,12 @@ export default {
   data() {
     return {
       accessibilityStates: {
-        inverted: true,
+        inverted: false,
         highlighted: false,
         accessibileFontSize: false,
         greyscaled: false
       },
-      showToolbar: false,
+      showToolbar: true,
     }
   },
   methods: {
@@ -85,31 +87,31 @@ export default {
         this.resetHighlightLinks()
         this.resetGrayscale()
         this.accessibilityStates[state] ?
-          document.body.classList.add("accessibility-contrast") :
-          document.body.classList.remove("accessibility-contrast")
+        document.documentElement.classList.add("accessibility-contrast") :
+        document.documentElement.classList.remove("accessibility-contrast")
       } else if (state === "greyscaled") {
         this.resetHighlightLinks()
         this.resetInvertContrast()
         this.accessibilityStates[state] ?
-          document.body.classList.add("accessibility-greyscale") :
-          document.body.classList.remove("accessibility-greyscale")
+        document.documentElement.classList.add("accessibility-greyscale") :
+        document.documentElement.classList.remove("accessibility-greyscale")
       } else if (state === "highlighted") {
         this.resetGrayscale()
         this.resetInvertContrast()
         this.hightlightLinks()
       } else if (state === "accessibileFontSize") {
         this.accessibilityStates[state] ?
-          document.body.classList.add("accessibility-font") :
-          document.body.classList.remove("accessibility-font")
+        document.documentElement.classList.add("accessibility-font") :
+        document.documentElement.classList.remove("accessibility-font")
       }
     },
     resetInvertContrast() {
       this.accessibilityStates.inverted = false
-      document.body.classList.remove("accessibility-contrast")
+      document.documentElement.classList.remove("accessibility-contrast")
     },
     resetGrayscale() {
       this.accessibilityStates.greyscaled = false
-      document.body.classList.remove("accessibility-greyscale")
+      document.documentElement.classList.remove("accessibility-greyscale")
     },
     resetHighlightLinks() {
       this.accessibilityStates.highlighted = false
@@ -123,7 +125,7 @@ export default {
       }
     },
     invertContrast(percent) {
-      document.body.style.setProperty('filter', `invert(${percent})`)
+      document.documentElement.style.setProperty('filter', `invert(${percent})`)
     }
   },
   computed: {
@@ -151,199 +153,205 @@ export default {
 </script>
 
 <style scoped>
-  ul {
-    margin: 0;
-    padding: 0;
-    font-weight: normal;
-  }
-  [data-tooltip] {
-    position: relative;
-    z-index: 2;
-    cursor: pointer;
-  }
 
-  /* Hide the tooltip content by default */
-  [data-tooltip]:before,
-  [data-tooltip]:after {
-    visibility: hidden;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
-    opacity: 0;
-    pointer-events: none;
-  }
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+[data-tooltip] {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
 
-  /* Position tooltip above the element */
-  [data-tooltip]:before {
-    position: absolute;
-    bottom: 105%;
-    left: 50%;
-    margin-bottom: 5px;
-    margin-left: -80px;
-    padding: 7px;
-    width: 160px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    background-color: #000;
-    background-color: hsla(0, 0%, 20%, 0.9);
-    color: #fff;
-    content: attr(data-tooltip);
-    text-align: center;
-    font-size: 14px;
-    line-height: 1.2;
-  }
+/* Hide the tooltip content by default */
+[data-tooltip]:before,
+[data-tooltip]:after {
+  visibility: hidden;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  pointer-events: none;
+}
 
-  /* Triangle hack to make tooltip look like a speech bubble */
-  [data-tooltip]:after {
-    position: absolute;
-    bottom: 105%;
-    left: 50%;
-    margin-left: -5px;
-    width: 0;
-    border-top: 5px solid #000;
-    border-top: 5px solid hsla(0, 0%, 20%, 0.9);
-    border-right: 5px solid transparent;
-    border-left: 5px solid transparent;
-    content: " ";
-    font-size: 0;
-    line-height: 0;
-  }
+/* Position tooltip above the element */
+[data-tooltip]:before {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: calc(100% + 10px);
+  margin-bottom: 5px;
+  padding: 7px 10px;
+  width: auto;
+  background-color: #141414;
+  color: #fff;
+  content: attr(data-tooltip);
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
 
-  /* Show tooltip content on hover */
-  [data-tooltip]:hover:before,
-  [data-tooltip]:hover:after {
-    visibility: visible;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-    filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
-    opacity: 1;
-  }
+/* Triangle hack to make tooltip look like a speech bubble */
+[data-tooltip]:after {
+  position: absolute;
+  top: calc(50% - 5px);
+  right: calc(100% + 5px);
+  margin-left: -5px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-color: transparent transparent transparent #141414;
+  content: " ";
+  z-index: 999;
+  font-size: 0;
+  line-height: 0;
+}
 
-  .accessibility-items {
-    list-style-type: none;
-  }
-  .accessibility-toolbar {
-    width: 300px;
-    position: absolute;
-    left: 65px;
-    bottom: 50%;
-    margin-bottom: 2px;
-  }
-  .accessibility-menu-item-icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  .accessibility-menu-item {
-    border-radius: 100px;
-    border: 2px solid #2196F3;
-    text-align: center;
-    float: left;
-    width: 50px;
-    height: 50px;
-    transition: all 0.3s ease;
-    background: white;
-    color: black;
-    font-size: 30px;
-    cursor: pointer;
-    margin-right: 10px;
-  }
+/* Show tooltip content on hover */
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+  visibility: visible;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
 
-  .accessibility-menu-item:hover {
-    background: #2196F3;
-  }
+.accessibility-items {
+  list-style-type: none;
+}
 
-  .active {
-    background-color: #2196F3;
-  }
+.accessibility-item {
+  display: block;
+}
+
+.accessibility-toolbar {
+  width: auto;
+  margin-bottom: 2px;
+}
+.accessibility-menu-item-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.accessibility-menu-item {
+  display: block;
+  text-align: center;
+  width: 54px;
+  height: 54px;
+  transition: all 0.3s ease;
+  background: rgba(0, 0, 0, 0.2);
+  color: black;
+  font-size: 30px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.accessibility-menu-item:hover {
+  color: blue;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.active {
+  background-color: #2196F3;
+  color: blue;
+  background: rgba(0, 0, 0, 0.05);
+}
 </style>
 
 <style>
-  .accessibility-font {
-    font-size: 1.25em;
-    font-size: 1.25rem;
-  }
-  .accessibility-greyscale {
-    -webkit-filter: grayscale(100%);
-    -moz-filter: grayscale(100%);
-    filter: grayscale(100%);
-    min-height: 100vh;
-  }
-  .accessibility-contrast {
-    -webkit-filter: invert(100%);
-    -moz-filter: invert(100%);
-    filter: invert(100%);
-    min-height: 100vh;
-  }
-  .accessibility-highlight-link {
-    padding: 3px;
-    background-color: black !important;
-    color: yellow !important;
-    text-decoration: underline !important;
-  }
+.accessibility-font {
+  font-size: 1.25em;
+  font-size: 1.25rem;
+}
+.accessibility-greyscale {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  filter: grayscale(100%);
+  min-height: 100vh;
+}
+.accessibility-contrast {
+  -webkit-filter: invert(100%);
+  -moz-filter: invert(100%);
+  filter: invert(100%);
+  min-height: 100vh;
+}
+.accessibility-highlight-link {
+  padding: 3px;
+  background-color: black !important;
+  color: yellow !important;
+  text-decoration: underline !important;
+}
 </style>
 
 
 <style scoped>
 
-  .fab {
-    position: fixed;
-    width: 56px;
-    left: 3vw;
-    bottom: 4vh;
-    z-index: 999;
-  }
-  .fab-action-button {
-    cursor: pointer;
-    position: absolute;
-    bottom: 0;
-    display: block;
-    width: 56px;
-    height: 56px;
-    background-color: #2196F3;
-    border-radius: 50%;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
-  }
-  .fab-action-button-icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 37px !important;
-    color: white;
-  }
-  .fade-enter-active, .fade-leave-active {
-    transition: opacity .5s;
-  }
-  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-    opacity: 0;
-  }
+.ux-options {
+  display: block;
+  position: fixed;
+  z-index: 100;
+  width: auto;
+  top: 1rem;;
+  right: 1rem;;
+  z-index: 999;
+}
+
+.ux-options__menu {
+  position: static;
+}
+
+.fab-action-button {
+  cursor: pointer;
+  position: relative;
+  display: block;
+  width: 54px;
+  height: 54px;
+  background-color: blue;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.1);
+}
+.fab-action-button-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
 
 </style>
 
 <style scoped>
-  /* fallback */
-  @font-face {
-    font-family: "Material Icons";
-    font-style: normal;
-    font-weight: 400;
-    src: local("Material Icons"), local("MaterialIcons-Regular"),
-      url(https://fonts.gstatic.com/s/materialicons/v17/2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2)
-        format("woff2");
-  }
-  .material-icons {
-    font-family: "Material Icons";
-    font-weight: normal;
-    font-style: normal;
-    font-size: 24px;
-    line-height: 1;
-    letter-spacing: normal;
-    text-transform: none;
-    display: inline-block;
-    white-space: nowrap;
-    word-wrap: normal;
-    direction: ltr;
-    -webkit-font-feature-settings: "liga";
-    -webkit-font-smoothing: antialiased;
-  }
+/* fallback */
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Material Icons"), local("MaterialIcons-Regular"),
+  url(https://fonts.gstatic.com/s/materialicons/v17/2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2)
+  format("woff2");
+}
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+}
 </style>
