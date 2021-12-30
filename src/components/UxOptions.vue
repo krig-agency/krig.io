@@ -344,12 +344,19 @@ ul {
 .fab-action-button {
   cursor: pointer;
   position: relative;
-  display: block;
+  display: none;
   width: 54px;
   height: 54px;
   background-color: blue;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.1);
 }
+
+@media only screen and (min-width: 768px) {
+  .fab-action-button {
+    display: block;
+  }
+}
+
 .fab-action-button-icon {
   position: absolute;
   top: 50%;
