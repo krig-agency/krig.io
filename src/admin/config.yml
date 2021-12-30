@@ -1,6 +1,11 @@
 backend:
+<<<<<<< Updated upstream
   name: git-gateway
   branch: master # Branch to update (optional; defaults to master)
+=======
+  name: github
+  repo: krig-agency/krig.io
+>>>>>>> Stashed changes
 
 media_folder: "static/uploads"
 public_folder: "/uploads"
