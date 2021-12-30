@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="post-list">
     <g-link :to="post.path">
       <h2>{{post.title}}</h2>
     </g-link>
@@ -13,3 +13,9 @@ export default {
   props: ["post"],
 }
 </script>
+
+<style lang="scss">
+
+.post-list {
+}
+</style>
