@@ -74,9 +74,7 @@ export default {
         accessibileFontSize: false,
         greyscaled: false
       },
-      showToolbar: true,
-      windowWidth: window.innerWidth
-    }
+      showToolbar: true    }
   },
   methods: {
     toggleState(state) {
