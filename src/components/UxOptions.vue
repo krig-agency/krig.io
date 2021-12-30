@@ -7,7 +7,7 @@
         </i>
       </span>
       <transition name="fade">
-        <div class='accessibility-toolbar' v-if="showToolbar">
+        <div class='accessibility-toolbar' v-if="isMobile || showToolbar">
           <ul class="accessibility-items">
             <li class="accessibility-item">
               <a class="accessibility-menu-item" :data-tooltip="invertColorsText" v-bind:class="{ active: accessibilityStates.inverted }" @click="toggleState('inverted')" :aria-label="invertColorsText">
@@ -75,6 +75,7 @@ export default {
         greyscaled: false
       },
       showToolbar: true,
+      windowWidth: window.innerWidth
     }
   },
   methods: {
@@ -131,9 +132,18 @@ export default {
   computed: {
     links() {
       return [...document.querySelectorAll('a')]
+    },
+    isMobile() {
+      return this.windowWidth <= 768
     }
   },
   mounted() {
+
+    window.addEventListener('resize', () => {
+      this.windowWidth = window.innerWidth
+      console.log(this.isMobile)
+    })
+
     if (localStorage.getItem('accessibility-settings')) {
       this.accessibilityStates = JSON.parse(localStorage.getItem('accessibility-settings'))
       for (var state in this.accessibilityStates) {
@@ -221,15 +231,28 @@ ul {
 
 .accessibility-items {
   list-style-type: none;
+  display: flex;
+}
+
+@media only screen and (min-width: 768px) {
+  .accessibility-items {
+    flex-direction: column;
+  }
 }
 
 .accessibility-item {
-  display: block;
+  display: inline-block;
+  width: 25%;
+}
+
+@media only screen and (min-width: 768px) {
+  .accessibility-item {
+    display: block;
+  }
 }
 
 .accessibility-toolbar {
   width: auto;
-  margin-bottom: 2px;
 }
 .accessibility-menu-item-icon {
   position: absolute;
@@ -240,7 +263,7 @@ ul {
 .accessibility-menu-item {
   display: block;
   text-align: center;
-  width: 54px;
+  width: 100%;
   height: 54px;
   transition: all 0.3s ease;
   background: rgba(0, 0, 0, 0.2);
@@ -248,6 +271,12 @@ ul {
   font-size: 30px;
   cursor: pointer;
   box-sizing: border-box;
+}
+
+@media only screen and (min-width: 768px) {
+  .accessibility-menu-item {
+    width: 54px;
+  }
 }
 
 .accessibility-menu-item:hover {
@@ -264,7 +293,7 @@ ul {
 
 <style>
 .accessibility-font {
-  font-size: 1.25em;
+  /* font-size: 1.25em; */
   font-size: 1.25rem;
 }
 .accessibility-greyscale {
@@ -288,16 +317,24 @@ ul {
 </style>
 
 
-<style scoped>
+<style scoped style="scss">
 
 .ux-options {
   display: block;
   position: fixed;
   z-index: 100;
-  width: auto;
-  top: 1rem;;
-  right: 1rem;;
+  width: 100%;
+  bottom: 0;
+  left: 0;
   z-index: 999;
+}
+@media only screen and (min-width: 768px) {
+  .ux-options {
+    top: 20px;
+    right: 20px;
+    left: auto;
+    width: auto;
+  }
 }
 
 .ux-options__menu {

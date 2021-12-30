@@ -44,12 +44,15 @@ body {
   background-color: #fff;
 }
 
+html {
+  font-size: 18px;
+}
+
 body {
   font-family: din,-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   margin:0;
   padding:0;
   overflow-x: hidden;
-  font-size: 18px;
   line-height: 1.5;
   color: #141414;
 }
