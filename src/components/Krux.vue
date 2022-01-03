@@ -308,6 +308,13 @@ ul {
   filter: invert(100%);
   min-height: 100vh;
 }
+
+.accessibility-greyscale.accessibility-contrast {
+  -webkit-filter: grayscale(100%) invert(100%);
+  -moz-filter: grayscale(100%) invert(100%);
+  filter: grayscale(100%) invert(100%);
+}
+
 .accessibility-highlight-link {
   padding: 3px;
   background-color: black !important;
