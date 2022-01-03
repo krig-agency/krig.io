@@ -1,6 +1,6 @@
 <template>
-  <div class="ux-options">
-    <div class="ux-options__menu">
+  <div class="krux">
+    <div class="krux__menu">
       <span class="fab-action-button" @click="showToolbar = !showToolbar">
         <i class="material-icons fab-action-button-icon">
           settings
@@ -47,7 +47,7 @@
 <script>
 
 export default {
-  name: 'UxOptions',
+  name: 'Krux',
   props: {
     invertColorsText: {
       type: String,
@@ -74,7 +74,9 @@ export default {
         accessibileFontSize: false,
         greyscaled: false
       },
-      showToolbar: true    }
+      showToolbar: true,
+      windowWidth: window.innerWidth
+    }
   },
   methods: {
     toggleState(state) {
@@ -161,10 +163,12 @@ ul {
   padding: 0;
   font-weight: normal;
 }
+
 [data-tooltip] {
   position: relative;
   z-index: 2;
   cursor: pointer;
+  word-break: keep-all;
 }
 
 /* Hide the tooltip content by default */
@@ -177,44 +181,48 @@ ul {
   pointer-events: none;
 }
 
-/* Position tooltip above the element */
 [data-tooltip]:before {
+  display: block;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: calc(100% + 10px);
+  bottom: 105%;
+  left: 50%;
+  transform: translateX(-50%);
   margin-bottom: 5px;
-  padding: 7px 10px;
+  padding: 7px;
   width: auto;
-  background-color: #141414;
+  background-color: #000;
+  background-color: hsla(0, 0%, 20%, 0.9);
   color: #fff;
   content: attr(data-tooltip);
   text-align: center;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.2;
+  word-break: keep-all;
   white-space: nowrap;
 }
 
-/* Triangle hack to make tooltip look like a speech bubble */
-[data-tooltip]:after {
-  position: absolute;
-  top: calc(50% - 5px);
-  right: calc(100% + 5px);
-  margin-left: -5px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 5px 0 5px 5px;
-  border-color: transparent transparent transparent #141414;
-  content: " ";
-  z-index: 999;
-  font-size: 0;
-  line-height: 0;
+@media only screen and (min-width: 768px) {
+  [data-tooltip]:before {
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+    left: auto;
+    right: calc(100% + 10px);
+    margin-bottom: 5px;
+    padding: 7px 10px;
+    width: auto;
+    background-color: #141414;
+    color: #fff;
+    content: attr(data-tooltip);
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
 }
 
 /* Show tooltip content on hover */
-[data-tooltip]:hover:before,
-[data-tooltip]:hover:after {
+[data-tooltip]:hover:before {
   visibility: visible;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
   filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
@@ -285,7 +293,7 @@ ul {
 
 <style>
 .accessibility-font {
-  /* font-size: 1.25em; */
+  font-size: 1.25em;
   font-size: 1.25rem;
 }
 .accessibility-greyscale {
@@ -311,7 +319,7 @@ ul {
 
 <style scoped style="scss">
 
-.ux-options {
+.krux {
   display: block;
   position: fixed;
   z-index: 100;
@@ -321,7 +329,7 @@ ul {
   z-index: 999;
 }
 @media only screen and (min-width: 768px) {
-  .ux-options {
+  .krux {
     top: 20px;
     right: 20px;
     left: auto;
@@ -329,7 +337,7 @@ ul {
   }
 }
 
-.ux-options__menu {
+.krux__menu {
   position: static;
 }
 

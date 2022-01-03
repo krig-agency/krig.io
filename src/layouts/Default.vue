@@ -5,7 +5,7 @@
         <g-link to="/">{{ $static.metadata.siteName }}</g-link>
       </strong>
       <nav class="nav">
-        <UxOptions />
+        <Krux />
         <g-link class="nav__link" to="/">Home</g-link>
         <g-link class="nav__link" to="/about/">About</g-link>
       </nav>
@@ -17,11 +17,11 @@
 <script>
 import PostList from '../components/PostList';
 import VScrollin from 'vue-scrollin';
-import UxOptions from '../components/UxOptions';
+import Krux from '../components/Krux';
 
 export default {
   components: {
-    UxOptions,
+    Krux,
     PostList,
     "v-scrollin": VScrollin,
   }
