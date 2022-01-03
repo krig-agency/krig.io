@@ -83,20 +83,14 @@ export default {
     },
     applyState(state) {
       if (state === "inverted") {
-        this.resetHighlightLinks()
-        this.resetGrayscale()
         this.accessibilityStates[state] ?
         document.documentElement.classList.add("accessibility-contrast") :
         document.documentElement.classList.remove("accessibility-contrast")
       } else if (state === "greyscaled") {
-        this.resetHighlightLinks()
-        this.resetInvertContrast()
         this.accessibilityStates[state] ?
         document.documentElement.classList.add("accessibility-greyscale") :
         document.documentElement.classList.remove("accessibility-greyscale")
       } else if (state === "highlighted") {
-        this.resetGrayscale()
-        this.resetInvertContrast()
         this.hightlightLinks()
       } else if (state === "accessibileFontSize") {
         this.accessibilityStates[state] ?
