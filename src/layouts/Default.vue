@@ -52,36 +52,22 @@ body {
   font-family: din,-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   margin:0;
   padding:0;
-  overflow-x: hidden;
   line-height: 1.5;
   color: #141414;
 }
 
 h1 {
   position: relative;
-  display: inline-block;
+  display: block;
   font-size: 9rem;
-  white-space: nowrap;
-  /* text-transform: uppercase; */
+  text-transform: uppercase;
   transition: all 0.2s ease;
   font-weight: 800;
 }
 
-.v-scrollin::after {
-  position: absolute;
-  top: 0;
-  right: -2.5rem;
-  display: inline-block;
-  content: ".";
-  color: blue;
-}
-
 .content-wrap {
   position: relative;
-  max-width: 760px;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
+  // width: 50%;
 }
 
 .header {

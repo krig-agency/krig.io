@@ -3,13 +3,21 @@
     <section class="welcome-home">
       <div class="content-wrap">
         <h1 class="headline-mega">
-          <v-scrollin :speed="50" :misses="4">We are KRIG</v-scrollin>
+          <span class="headline-mega__we">
+            <v-scrollin :speed="60" :misses="2">We are</v-scrollin>
+            <ul class="we-are-krig">
+              <li><g-image src="~/assets/images/krig-crew.png" /></li>
+              <li><g-image src="~/assets/images/krig-agency-loop-1.jpeg" /></li>
+              <li><g-image src="~/assets/images/krig-agency-loop-2.jpeg" /></li>
+              <li><g-image src="~/assets/images/krig-agency-loop-3.jpeg" /></li>
+            </ul>
+          </span>
+          <span class="headline-mega__krig">
+            <v-scrollin :speed="100" :misses="3">KRIG</v-scrollin>
+          </span>
         </h1>
       </div>
 
-      <div class="krig-crew">
-        <g-image src="~/assets/images/krig-crew.png" />
-      </div>
     </section>
 
     <div class="content-wrap">
@@ -79,6 +87,9 @@ export default {
     title: 'KRIG digital agency'
   },
   methods: {
+    mouseOver: function(){
+      this.active = !this.active;
+    },
     toggleBodyClass(addRemoveClass, className) {
       const el = document.body;
 
@@ -94,26 +105,29 @@ export default {
   },
   destroyed() {
     this.toggleBodyClass('removeClass', 'mb-0');
+  },
+
+  el: '#demo',
+  data: {
+    active: false
+  },
+  methods: {
+    mouseOver: function(){
+      this.active = !this.active;
+    }
   }
-  // name: 'v-polygon',
-  // mounted: function () {
-  //
-  //   // Once the component is mounted, begin animating
-  //   this.$anime({
-  //     targets: '#lineDrawing .cls-1',
-  //     strokeDashoffset: [this.setDashoffset, 0],
-  //     fill:['rgba(255,255,255,0)', 'rgba(255,255,255,0.4)'],
-  //     easing: 'easeInOutCubic',
-  //     duration: 400,
-  //     delay: function(el, i) { return i * 200 },
-  //     direction: 'alternate',
-  //     loop: true
-  //   });
-  // }
 }
+
 </script>
 
 <style lang="scss">
+
+body {
+  height: 100%;
+  background-image: url("~@/assets/images/krig-crew.png");
+  background-size: cover;
+  background-position: bottom -50px right;
+}
 
 svg {
   fill: #eeff00;
@@ -121,14 +135,6 @@ svg {
   top: 50%;
   transform: translate(-50%,-50%);
   width: 400px;
-}
-
-.cls-1 {
-  stroke:#eeff00;
-  stroke-width:0.5px;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-  stroke-width:0.75px;
 }
 
 .welcome-home {
@@ -142,31 +148,117 @@ svg {
   .headline-mega {
     position: absolute;
     bottom: 0;
-    right: 0;
-    z-index: 1;
+    left: 20px;
+    z-index: 100;
     margin: 0;
-    text-align: right;
+    color: white;
+    text-align: left;
     line-height: 1;
+    // mix-blend-mode: difference;
 
     .v-scrollin {
-      color: rgba(0, 0, 0, 0.2);
-      mix-blend-mode: multiply;
-      transition: color 0.2s ease-in-out;
+      display: inline-block;
+    }
+
+    &__we {
+      display: block;
+      position: relative;
+
+      .v-scrollin {
+        position: relative;
+      }
 
       &:hover {
-        color: rgba(0, 0, 0, 0.5);
+        cursor: help;
+        .we-are-krig {
+          // display: block;
+        }
+      }
+    }
+
+    &__krig {
+      display: inline-block;
+      position: relative;
+
+      &::after {
+        position: absolute;
+        top: 0;
+        right: -2.5rem;
+        display: inline-block;
+        content: ".";
+        color: blue;
       }
     }
   }
 }
 
-.krig-crew {
+.we-are-krig {
+  display: none;
   position: absolute;
-  top: 0;
-  width: 43%;
+  bottom: 0;
+  left: 10vw;
+  width: 30%;
+  margin: 0;
+  list-style-type: none;
+  z-index: -1;
 
   img {
     width: 100%;
   }
 }
+
+// test swap images styles
+
+.we-are-krig > li {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 200px;
+  text-align: center;
+}
+
+// .we-are-krig > *:nth-child(1) { background: lightsalmon; }
+// .we-are-krig > *:nth-child(2) { background: lightsteelblue; }
+// .we-are-krig > *:nth-child(3) { background: lightseagreen; }
+// .we-are-krig > *:nth-child(4) { background: lightskyblue; }
+
+// Animation settings
+$totalTime: 2s;
+$items: 4;
+$animationSpeed: 13;
+
+// Calculate animation time in seconds (how long the fade lasts)
+$animationTime: 0s + $totalTime / ($items * $animationSpeed * 2);
+// Calculate show time in seconds (how long the element is displayed)
+$showTime: (0s + $totalTime - ($animationTime * $items)) / $items;
+
+// Set animation for each element
+@for $i from 1 through $items {
+  .we-are-krig > *:nth-child(#{$i}) {
+    // Delay is increased for each item
+    // Starting with an offset of -$animationTime so the first element is displayed on load
+    $delay: -$animationTime + ($animationTime + $showTime) * ($i - 1);
+    animation: fadeinout $totalTime linear $delay infinite;
+  }
+}
+
+// Calculate percentages of the display time for keyframes
+$animationPercentage: 0% + 100 * (($animationTime / $totalTime));
+$showPercentage: 0% + 100 * ($showTime / $totalTime);
+
+@keyframes fadeinout {
+  0% {
+    opacity: 0;
+  }
+  #{$animationPercentage},
+  #{$animationPercentage + $showPercentage} {
+    opacity: 1;
+  }
+  #{$showPercentage + $animationPercentage * 2},
+  100% {
+    opacity: 0;
+  }
+}
+
 </style>
