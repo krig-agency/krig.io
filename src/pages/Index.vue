@@ -36,16 +36,18 @@
 
     <div class="hi-buddies">
       <section class="buddies-section" v-parallax.absY="-0.1">
-        <a href="/" class="buddy"><g-image src="~/assets/images/hejalivet.png" /></a>
-        <a href="/" class="buddy"><g-image src="~/assets/images/fatta-logo.png" /></a>
-        <a href="/" class="buddy"><g-image src="~/assets/images/logo-ellinor.png" /></a>
-        <a href="/" class="buddy"><g-image src="~/assets/images/mensen-black.png" /></a>
-        <a href="/" class="buddy"><g-image src="~/assets/images/Minna_Palmqvist-logo.png" /></a>
-        <a href="/" class="buddy"><g-image src="~/assets/images/operation1325-logo.png" /></a>
-        <a href="/" class="buddy"><g-image src="~/assets/images/psykologifabriken-logo.svg" /></a>
-        <a href="/" class="buddy"><g-image src="~/assets/images/rdk.png" /></a>
-        <a href="/" class="buddy"><g-image src="~/assets/images/sms.svg" /></a>
-        <a href="/" class="buddy"><g-image src="~/assets/images/vegovision-logo.png" /></a>
+        <a href="https://hejalivet.com/" class="buddy" target="_blank"><g-image src="~/assets/images/hejalivet.png" /></a>
+        <a href="https://fatta.nu/" class="buddy" target="_blank"><g-image src="~/assets/images/fatta-logo.png" /></a>
+        <a href="https://ellinor.se/" class="buddy" target="_blank"><g-image src="~/assets/images/logo-ellinor.png" /></a>
+        <a href="https://mensen.se/" class="buddy" target="_blank"><g-image src="~/assets/images/mensen-black.png" /></a>
+        <a href="https://www.minnapalmqvist.com/" class="buddy" target="_blank"><g-image src="~/assets/images/Minna_Palmqvist-logo.png" /></a>
+        <a href="https://operation1325.se/" class="buddy" target="_blank"><g-image src="~/assets/images/operation1325-logo.png" /></a>
+        <a href="https://psykologifabriken.se/" class="buddy" target="_blank"><g-image src="~/assets/images/psykologifabriken-logo.svg" /></a>
+        <a href="https://www.raddadjuren.se/" class="buddy" target="_blank"><g-image src="~/assets/images/rdk.png" /></a>
+        <a href="https://www.smslivraddare.se/" class="buddy" target="_blank"><g-image src="~/assets/images/sms.svg" /></a>
+        <a href="https://www.djurensratt.se/blogg/det-blev-13-ar-av-den-fantastiska-massan-vegovision" class="buddy" target="_blank"><g-image src="~/assets/images/vegovision-logo.png" /></a>
+        <a href="https://www.djurensratt.se/" class="buddy" target="_blank"><g-image src="~/assets/images/dr-logo.png" /></a>
+
       </section>
       <!-- <InstaPost /> -->
     </div>
@@ -235,16 +237,19 @@ svg {
 }
 
 .hi-buddies {
-  max-width: 50%;
-  background-color: transparent;
-  box-shadow: none;
+  max-width: 45%;
+  background-color: white;
   float: right;
   margin: 5rem;
+  box-shadow: 0 10px 50px 2px rgba(0,0,0,0.05);
 
   .buddies-section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 50px;
+    padding: 4rem;
+    justify-items: center;
+    align-items: center;
   }
 }
 
