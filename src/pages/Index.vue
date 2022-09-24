@@ -30,8 +30,26 @@
           <a href="/" class="button button--cta">Sign me up!</a>
         </div>
       </section>
+    </div>
+
+    <!-- <InstaPost /> -->
+
+    <div class="hi-buddies">
+      <section class="buddies-section" v-parallax.absY="-0.1">
+        <a href="/" class="buddy"><g-image src="~/assets/images/hejalivet.png" /></a>
+        <a href="/" class="buddy"><g-image src="~/assets/images/fatta-logo.png" /></a>
+        <a href="/" class="buddy"><g-image src="~/assets/images/logo-ellinor.png" /></a>
+        <a href="/" class="buddy"><g-image src="~/assets/images/mensen-black.png" /></a>
+        <a href="/" class="buddy"><g-image src="~/assets/images/Minna_Palmqvist-logo.png" /></a>
+        <a href="/" class="buddy"><g-image src="~/assets/images/operation1325-logo.png" /></a>
+        <a href="/" class="buddy"><g-image src="~/assets/images/psykologifabriken-logo.svg" /></a>
+        <a href="/" class="buddy"><g-image src="~/assets/images/rdk.png" /></a>
+        <a href="/" class="buddy"><g-image src="~/assets/images/sms.svg" /></a>
+        <a href="/" class="buddy"><g-image src="~/assets/images/vegovision-logo.png" /></a>
+      </section>
       <!-- <InstaPost /> -->
     </div>
+
   </Layout>
 </template>
 
@@ -105,11 +123,7 @@ svg {
 .content-wrap {
   position: absolute;
   margin: 5rem;
-  padding: 1.25rem 4rem 3.25rem 4rem;
-  color: white;
-  background-color: black;
   align-self: start;
-  box-shadow: 0 10px 50px 2px rgba(0,0,0,0.05);
   box-sizing: border-box;
 }
 
@@ -178,6 +192,10 @@ svg {
 .intro-puff {
   position: absolute;
   max-width: 45%;
+  color: white;
+  background-color: black;
+  box-shadow: 0 10px 50px 2px rgba(0,0,0,0.05);
+  padding: 1.25rem 4rem 3.25rem 4rem;
 
   h3 {
     color: yellow;
@@ -190,45 +208,56 @@ svg {
   align-self: flex-start;
   left: 0;
   padding: 0;
-  background-color: transparent;
+  color: white;
+  box-shadow: 0 10px 50px 2px rgba(0,0,0,0.05);
+}
 
-  .hi-krux {
-    &__headline {
-      position: absolute;
-      top: -1rem;
-      right: -4rem;
-      font-style: italic;
-      text-shadow: 4px 4px 0px black;
-    }
-
-    &__text {
-      position: relative;
-      background-color: black;
-      padding: 0.2rem 1.5rem 1rem;
-      margin: -10px 0 0 0;
-
-      p {
-        font-size: 0.875rem;
-        width: 70%;
-      }
-    }
-  }
-
-  .button--cta {
+.hi-krux {
+  &__headline {
     position: absolute;
-    right: 0;
-    bottom: 0;
-    padding: 1rem 1rem 0.8rem 1rem;
-    background-color: yellow;
-    color: black;
-    text-decoration: none;
-    font-weight: 600;
-    text-transform: uppercase;
+    top: -1rem;
+    right: -4rem;
+    font-style: italic;
+    text-shadow: 4px 4px 0px black;
   }
 
-  .content-wrap__img {
+  &__text {
+    position: relative;
+    background-color: black;
+    padding: 0.2rem 1.5rem 1rem;
+    margin: -10px 0 0 0;
 
+    p {
+      font-size: 0.875rem;
+      width: 70%;
+    }
   }
+}
+
+.hi-buddies {
+  max-width: 50%;
+  background-color: transparent;
+  box-shadow: none;
+  float: right;
+  margin: 5rem;
+
+  .buddies-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 50px;
+  }
+}
+
+.button--cta {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 1rem 1rem 0.8rem 1rem;
+  background-color: yellow;
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 @keyframes "blink" {
