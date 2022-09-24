@@ -26,5 +26,5 @@ Download from [nodejs.org](https://nodejs.org/en/download/) or install via Homeb
 
 Run `yarn` from the projekt folder.
 
-Run `gridsom develop` from the projekt folder.
+Run `gridsome develop` from the projekt folder.
 The site is now running on http://localhost:8080
