@@ -1,14 +1,10 @@
 <template>
   <div class="layout">
     <header class="header">
+      <Krux />
       <strong>
         <g-link to="/">{{ $static.metadata.siteName }}</g-link>
       </strong>
-      <nav class="nav">
-        <Krux />
-        <g-link class="nav__link" to="/">Home</g-link>
-        <g-link class="nav__link" to="/about/">About</g-link>
-      </nav>
     </header>
     <slot/>
   </div>
@@ -16,14 +12,12 @@
 
 <script>
 import PostList from '../components/PostList';
-import VScrollin from 'vue-scrollin';
 import Krux from '../components/Krux';
 
 export default {
   components: {
     Krux,
     PostList,
-    "v-scrollin": VScrollin,
   }
 }
 </script>
@@ -39,9 +33,18 @@ export default {
 <style lang="scss">
 
 html,
-body {
-  height: 100%;
+body,
+.layout {
+  // height: 100vh;
   background-color: #fff;
+  background-image: url("~@/assets/images/krig-crew.png");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: bottom -50px right;
+}
+
+.layoutc {
+  // height: 100%;
 }
 
 html {
@@ -56,6 +59,10 @@ body {
   color: #141414;
 }
 
+img {
+  max-width: 100%;
+}
+
 h1 {
   position: relative;
   display: block;
@@ -63,6 +70,15 @@ h1 {
   text-transform: uppercase;
   transition: all 0.2s ease;
   font-weight: 800;
+}
+
+h2 {
+  font-size: 3.25rem;
+  line-height: 1;
+}
+
+h3 {
+  font-size: 1.5rem;
 }
 
 .content-wrap {

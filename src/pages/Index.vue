@@ -1,31 +1,36 @@
 <template>
   <Layout>
     <section class="welcome-home">
-      <div class="content-wrap">
-        <h1 class="headline-mega">
+        <h1 class="headline-mega" v-parallax.absY="0.2">
           <span class="headline-mega__we">
             <v-scrollin :speed="60" :misses="2">We are</v-scrollin>
-            <ul class="we-are-krig">
-              <li><g-image src="~/assets/images/krig-crew.png" /></li>
-              <li><g-image src="~/assets/images/krig-agency-loop-1.jpeg" /></li>
-              <li><g-image src="~/assets/images/krig-agency-loop-2.jpeg" /></li>
-              <li><g-image src="~/assets/images/krig-agency-loop-3.jpeg" /></li>
-            </ul>
           </span>
           <span class="headline-mega__krig">
             <v-scrollin :speed="100" :misses="3">KRIG</v-scrollin>
           </span>
         </h1>
-      </div>
-
     </section>
 
-    <div class="content-wrap">
-      <PostList
-      v-for="edge in $page.allPost.edges"
-      :key="edge.node.id"
-      :post="edge.node"
-      />
+    <div class="hi-there">
+      <section class="content-wrap intro-puff" v-parallax.absY="-0.1">
+        <h2>All female Swedish digital agency.</h2>
+        <h3>A combination of programming for the web and designing for the eye and mind.</h3>
+        <p>Vår passion ligger i att designa och utveckla för webben med fokus på tillgänglighet, UX, UI och programmering. Sen 2017 har vi byggt användarupplevelser och tekniska lösningar, med och för, vettiga organisationer, företag och samarbetspartners som jobbar med våra hjärtefrågor.</p>
+      </section>
+      <!-- <InstaPost /> -->
+    </div>
+
+    <div class="hi-krux">
+      <section class="content-wrap vanno-puff" v-parallax.absY="0.5">
+        <h2 class="hi-krux__headline">Vanno's up?</h2>
+        <div class="content-wrap__img"><g-image src="~/assets/images/vanno.jpg" /></div>
+        <div class="hi-krux__text">
+          <h4>What the krUX is going on?</h4>
+          <p>Get the latest news from KRIG and the krUX product.</p>
+          <a href="/" class="button button--cta">Sign me up!</a>
+        </div>
+      </section>
+      <!-- <InstaPost /> -->
     </div>
   </Layout>
 </template>
@@ -47,41 +52,14 @@
 <script>
 import PostList from '../components/PostList';
 import VScrollin from 'vue-scrollin';
+import VueScrollSnap from "vue-scroll-snap";
+// import InstaPost from '../components/InstaPost'
 
 export default {
-  myOptions: {
-    layout: {
-      color: 'black',
-      backgroundColor: 'lightgray',
-      selectedColor: 'white',
-      selectedBackgroundColor: 'green',
-      borderColor: 'black',
-      fontFamily: 'Arial',
-      fontWeight: 'normal',
-      fontWeightSelected: 'bold',
-      squareCorners: false,
-      noBorder: false
-    },
-    size: {
-      fontSize: 14,
-      height: 34,
-      padding: 7,
-      width: 100
-    },
-    items: {
-      delay: .4,
-      preSelected: 'unknown',
-      disabled: false,
-      labels: [
-        {name: 'Off', color: 'white', backgroundColor: 'red'},
-        {name: 'On', color: 'white', backgroundColor: 'green'}
-      ]
-    }
-  },
-
   components: {
     PostList,
-    "v-scrollin": VScrollin
+    "v-scrollin": VScrollin,
+    // InstaPost,
   },
   metaInfo: {
     title: 'KRIG digital agency'
@@ -100,14 +78,8 @@ export default {
       }
     },
   },
-  mounted() {
-    this.toggleBodyClass('addClass', 'mb-0');
-  },
-  destroyed() {
-    this.toggleBodyClass('removeClass', 'mb-0');
-  },
 
-  el: '#demo',
+  el: '#app',
   data: {
     active: false
   },
@@ -122,13 +94,6 @@ export default {
 
 <style lang="scss">
 
-body {
-  height: 100%;
-  background-image: url("~@/assets/images/krig-crew.png");
-  background-size: cover;
-  background-position: bottom -50px right;
-}
-
 svg {
   fill: #eeff00;
   left: 50%;
@@ -137,13 +102,23 @@ svg {
   width: 400px;
 }
 
+.content-wrap {
+  position: absolute;
+  margin: 5rem;
+  padding: 1.25rem 4rem 3.25rem 4rem;
+  color: white;
+  background-color: black;
+  align-self: start;
+  box-shadow: 0 10px 50px 2px rgba(0,0,0,0.05);
+  box-sizing: border-box;
+}
+
 .welcome-home {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
   position: relative;
   height: 100vh;
-
-  .content-wrap {
-    height: 100vh;
-  }
 
   .headline-mega {
     position: absolute;
@@ -187,41 +162,83 @@ svg {
         display: inline-block;
         content: ".";
         color: blue;
+        animation: 2s blink ease infinite;
+        animation-delay: 1s;
       }
     }
   }
 }
 
-.we-are-krig {
-  display: none;
-  position: absolute;
-  bottom: 0;
-  left: 10vw;
-  width: 30%;
-  margin: 0;
-  list-style-type: none;
-  z-index: -1;
+.hi-there {
+  display: flex;
+  justify-content: flex-end;
+  height: 100vh;
+}
 
-  img {
-    width: 100%;
+.intro-puff {
+  position: absolute;
+  max-width: 45%;
+
+  h3 {
+    color: yellow;
   }
 }
 
-// test swap images styles
-
-.we-are-krig > li {
-  opacity: 0;
-  position: absolute;
+.vanno-puff {
+  position: relative;
+  max-width: 30%;
+  align-self: flex-start;
   left: 0;
-  bottom: 0;
-  width: 200px;
-  text-align: center;
+  padding: 0;
+  background-color: transparent;
+
+  .hi-krux {
+    &__headline {
+      position: absolute;
+      top: -1rem;
+      right: -4rem;
+      font-style: italic;
+      text-shadow: 4px 4px 0px black;
+    }
+
+    &__text {
+      position: relative;
+      background-color: black;
+      padding: 0.2rem 1.5rem 1rem;
+      margin: -10px 0 0 0;
+
+      p {
+        font-size: 0.875rem;
+        width: 70%;
+      }
+    }
+  }
+
+  .button--cta {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 1rem 1rem 0.8rem 1rem;
+    background-color: yellow;
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .content-wrap__img {
+
+  }
 }
 
-// .we-are-krig > *:nth-child(1) { background: lightsalmon; }
-// .we-are-krig > *:nth-child(2) { background: lightsteelblue; }
-// .we-are-krig > *:nth-child(3) { background: lightseagreen; }
-// .we-are-krig > *:nth-child(4) { background: lightskyblue; }
+@keyframes "blink" {
+  from, to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
 
 // Animation settings
 $totalTime: 2s;

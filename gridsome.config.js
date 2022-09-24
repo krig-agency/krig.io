@@ -31,6 +31,13 @@ module.exports = {
       }
     },
     {
+      use: '@zefman/gridsome-source-instagram',
+      options: {
+        username: 'krig_agency', // Instagram username
+        typeName: 'InstagramPhoto' // The GraphQL type you want the photos to be added under. Defaults to InstagramPhoto
+      }
+    },
+    {
       use: 'gridsome-plugin-netlify-cms',
       options: {
         publicPath: `/admin`,
