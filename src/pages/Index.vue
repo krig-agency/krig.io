@@ -24,7 +24,7 @@
         <h2 class="hi-krux__headline">Vanno's up?</h2>
         <div class="content-wrap__img"><g-image src="~/assets/images/vanno.jpg" /></div>
         <div class="hi-krux__text">
-          <h4>What the krUX is going on?</h4>
+          <h4>What the krUX is going on?!</h4>
           <p>Get the latest news from KRIG and the krUX product.</p>
           <a href="/" class="button button--cta">Sign me up!</a>
         </div>
