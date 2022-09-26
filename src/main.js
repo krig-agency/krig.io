@@ -7,4 +7,9 @@ export default function (Vue, { router, head, isClient }) {
   Vue.component('Layout', DefaultLayout)
   // Use vue-parallax-js to the project
   Vue.use(VueParallaxJs)
+
+  head.script.push({
+    src: 'https://www.instagram.com/embed.js',
+    async: true
+  })
 };

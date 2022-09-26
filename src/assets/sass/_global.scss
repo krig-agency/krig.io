@@ -1,0 +1,54 @@
+/* Variables */
+$screen-mini-min: 576px; // Small tablets and large smartphones (landscape view)
+
+$screen-sm-min: 768px; // Small tablets and large smartphones (landscape view)
+
+$screen-md-min: 992px; // Small tablets (portrait view)
+
+$screen-lg-min: 1124px; // Tablets and small desktops
+
+$screen-xl-min: 1450px; // Large tablets and desktops
+
+$screen-xxl-min: 2200px; // Extra large tablets and desktops
+
+/* Mixins */
+@mixin mini {
+  @media (min-width: #{$screen-mini-min}) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (min-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: #{$screen-lg-min}) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: #{$screen-xl-min}) {
+    @content;
+  }
+}
+
+@mixin xxl {
+  @media (min-width: #{$screen-xxl-min}) {
+    @content;
+  }
+}
+
+/* Test */
+body {
+  // display: none !important;
+}
