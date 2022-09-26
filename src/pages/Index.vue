@@ -31,8 +31,8 @@
       </section>
 
       <div class="hi-buddies" v-parallax.absY="-0.5">
-        <div class="side-quote">Selected Clients</div>
         <section class="buddies-section">
+          <div class="side-quote">Selected Clients</div>
           <a href="https://www.njorda.se/" class="buddy" target="_blank"><g-image src="~/assets/images/njorda-logo.svg" /></a>
           <a href="https://www.minnapalmqvist.com/" class="buddy" target="_blank"><g-image src="~/assets/images/Minna_Palmqvist-logo.png" /></a>
           <a href="https://hejalivet.com/" class="buddy" target="_blank"><g-image src="~/assets/images/hejalivet-red.png" /></a>
@@ -43,6 +43,8 @@
           <a href="https://operation1325.se/" class="buddy" target="_blank"><g-image src="~/assets/images/operation1325-2020-logo.png" /></a>
           <a href="https://psykologifabriken.se/" class="buddy" target="_blank"><g-image src="~/assets/images/psykologifabriken-logo.svg" /></a>
           <a href="https://www.smslivraddare.se/" class="buddy" target="_blank"><g-image src="~/assets/images/sms-logo.svg" /></a>
+          <a href="https://studieforbunden.se/" class="buddy" target="_blank"><g-image src="~/assets/images/red-bull-logo.png" /></a>
+          <a href="https://www.redbull.com/se-sv/energydrink/" class="buddy" target="_blank"><g-image src="~/assets/images/studieforbunden.png" /></a>
         </section>
       </div>
     </div>
@@ -243,6 +245,7 @@ export default {
   box-shadow: 0 10px 50px 2px rgba(0,0,0,0.05);
 
   .buddies-section {
+    position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 50px;
@@ -261,17 +264,17 @@ export default {
   }
 }
 
-// .side-quote {
-//   position: absolute;
-//   right: 0rem;
-//   top: 0;
-//   -webkit-transform: rotate(90deg);
-//   -o-transform: rotate(90deg);
-//   transform: rotate(90deg);
-//   font-size: 7rem;
-//   opacity: 0.05;
-//   z-index: -1;
-// }
+.side-quote {
+  position: absolute;
+  right: 0rem;
+  top: 0;
+  -webkit-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  font-size: 7rem;
+  opacity: 0.05;
+  z-index: -1;
+}
 
 .button--cta {
   position: absolute;
