@@ -119,16 +119,12 @@ export default {
 
 <style lang="scss">
 
-// svg {
-//   fill: #eeff00;
-//   left: 50%;
-//   top: 50%;
-//   transform: translate(-50%,-50%);
-//   width: 400px;
-// }
-
 .insta-post {
-  max-width: 30%;
+  max-width: 100%;
+
+  @include sm {
+    max-width: 30%;
+  }
   .instagram-media {
     background-color: black !important;
 
@@ -205,33 +201,47 @@ export default {
   display: flex;
   justify-content: flex-end;
   height: 100vh;
-}
 
-.intro-puff {
-  position: absolute;
-  max-width: 45%;
-  color: white;
-  background-color: black;
-  box-shadow: 0 10px 50px 2px rgba(0,0,0,0.05);
-  padding: 1.25rem 4rem 3.25rem 4rem;
+  .intro-puff {
+    position: static;
+    max-width: 100%;
+    color: white;
+    background-color: black;
+    box-shadow: 0 10px 50px 2px rgba(0,0,0,0.05);
+    padding: 1.25rem 4rem 3.25rem 4rem;
 
-  h3 {
-    color: yellow;
+    @include md {
+      position: absolute;
+      max-width: 45%;
+    }
+
+    h3 {
+      color: yellow;
+    }
   }
 }
 
 .vanno-puff {
   position: relative;
-  max-width: 30%;
+  max-width: 80%;
   align-self: flex-start;
   left: 0;
   padding: 0;
   color: white;
   box-shadow: 0 10px 50px 2px rgba(0,0,0,0.05);
+
+  @include md {
+    max-width: 30%;
+  }
 }
 
 .hi-krux {
   display: flex;
+  flex-direction: column;
+
+  @include md {
+    flex-direction: row;
+  }
 
   &__headline {
     position: absolute;
@@ -255,11 +265,15 @@ export default {
 }
 
 .hi-buddies {
-  max-width: 45%;
+  max-width: 100%;
   background-color: #fff !important;
   align-self: flex-end;
   margin: 5rem;
   box-shadow: 0 10px 50px 2px rgba(0,0,0,0.05);
+
+  @include md {
+    max-width: 45%;
+  }
 
   .buddies-section {
     position: relative;
