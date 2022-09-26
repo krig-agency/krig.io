@@ -266,12 +266,12 @@ export default {
 
 .side-quote {
   position: absolute;
-  right: 0rem;
-  top: 0;
+  left: 2rem;
+  top: 7rem;
   -webkit-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
-  font-size: 7rem;
+  font-size: 9rem;
   opacity: 0.05;
   z-index: -1;
 }

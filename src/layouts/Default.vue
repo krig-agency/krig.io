@@ -7,6 +7,14 @@
       </strong>
     </header>
     <slot/>
+    <footer class="footer">
+      <div class="footer--click">
+        <g-image class="footer--click-icon" src="~/assets/images/bye.svg" />
+      </div>
+      <div class="footer--content">
+        <p>KRIGio AB  I  Galvsbo 666  I  073-9825395  I  hello@krig.io</p>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -110,5 +118,39 @@ h3 {
   font-family: din;
   src: url('../assets/fonts/din-bold.woff');
   font-weight: bold;
+}
+
+.footer--content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  background-color: white;
+  height: 66px;
+  color: blue;
+  width: auto;
+  text-align: center;
+
+}
+
+.footer--click {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  margin-left: 20px;
+  width: 66px;
+  height: 66px;
+  background-color: blue;
+  color: white;
+}
+
+.footer--click-icon {
+  position: absolute;
+  width: 40px;
+  height: 40px;
 }
 </style>
