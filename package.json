@@ -13,6 +13,7 @@
     "gridsome": "^0.7.0",
     "gridsome-plugin-netlify-cms": "^1.0.9",
     "netlify-cms": "^2.10.181",
+    "vue-instagram-embed": "^1.0.0",
     "vue-parallax-js": "^0.2.3",
     "vue-plugin-animejs": "^1.0.0",
     "vue-rellax": "^0.2.0",
@@ -22,6 +23,7 @@
   },
   "devDependencies": {
     "sass": "^1.45.1",
-    "sass-loader": "^10.1.1"
+    "sass-loader": "^10.1.1",
+    "style-resources-loader": "^1.5.0"
   }
 }
