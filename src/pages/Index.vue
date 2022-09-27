@@ -1,7 +1,8 @@
 <template>
   <Layout>
-    <section class="welcome-home">
-      <h1 class="headline-mega" v-parallax.absY="0.2">
+    <div class="container" v-rellax data-rellax-speed="-2" data-rellax-percentage="0.8">
+    <section class="welcome-home" v-scroll-reveal.reset>
+      <h1 class="headline-mega">
         <span class="headline-mega__we">
           <v-scrollin :speed="60" :misses="2">We are</v-scrollin>
         </span>
@@ -10,17 +11,21 @@
         </span>
       </h1>
     </section>
-
-    <div class="hi-there">
-      <section class="content-wrap intro-puff" v-parallax.absY="-0.1">
-        <h2>All female Swedish digital agency.</h2>
-        <h3>A combination of programming for the web and designing for the eye and mind.</h3>
-        <p>Vår passion ligger i att designa och utveckla för webben med fokus på tillgänglighet, UX, UI och programmering. Sen 2017 har vi byggt användarupplevelser och tekniska lösningar, med och för, vettiga organisationer, företag och samarbetspartners som jobbar med våra hjärtefrågor.</p>
-      </section>
     </div>
 
+    <div class="container" v-rellax data-rellax-speed="2" data-rellax-percentage="0.8">
+      <div class="hi-there" v-scroll-reveal.reset>
+        <section class="content-wrap intro-puff">
+          <h2>All female Swedish digital agency.</h2>
+          <h3>A combination of programming for the web and designing for the eye and mind.</h3>
+          <p>Vår passion ligger i att designa och utveckla för webben med fokus på tillgänglighet, UX, UI och programmering. Sen 2017 har vi byggt användarupplevelser och tekniska lösningar, med och för, vettiga organisationer, företag och samarbetspartners som jobbar med våra hjärtefrågor.</p>
+        </section>
+      </div>
+  </div>
+
+    <div class="container" v-rellax data-rellax-speed="-5" data-rellax-percentage="0.8">
     <div class="hi-krux">
-      <section class="content-wrap vanno-puff" v-parallax.absY="0.5">
+      <section class="content-wrap vanno-puff">
         <h2 class="hi-krux__headline">Vanno's up?</h2>
         <div class="content-wrap__img"><g-image src="~/assets/images/vanno.jpg" /></div>
         <div class="hi-krux__text">
@@ -29,8 +34,9 @@
           <a href="/" class="button button--cta">Sign me up!</a>
         </div>
       </section>
+      </div>
 
-      <div class="hi-buddies" v-parallax.absY="-0.5">
+      <div class="hi-buddies" v-scroll-reveal.reset>
         <section class="buddies-section">
           <div class="side-quote">Selected Clients</div>
           <a href="https://www.njorda.se/" class="buddy" target="_blank"><g-image src="~/assets/images/njorda-logo.svg" /></a>
