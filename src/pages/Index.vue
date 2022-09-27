@@ -17,23 +17,23 @@
       <div class="hi-there" v-scroll-reveal.reset>
         <section class="content-wrap intro-puff">
           <h2>All female Swedish digital agency.</h2>
-          <h3>A combination of programming for the web and designing for the eye and mind.</h3>
+          <h3 class="yellow">A combination of programming for the web and designing for the eye and mind.</h3>
           <p>Vår passion ligger i att designa och utveckla för webben med fokus på tillgänglighet, UX, UI och programmering. Sen 2017 har vi byggt användarupplevelser och tekniska lösningar, med och för, vettiga organisationer, företag och samarbetspartners som jobbar med våra hjärtefrågor.</p>
         </section>
       </div>
-  </div>
+    </div>
 
     <div class="container" v-rellax data-rellax-speed="-5" data-rellax-percentage="0.8">
-    <div class="hi-krux">
-      <section class="content-wrap vanno-puff">
-        <h2 class="hi-krux__headline">Vanno's up?</h2>
-        <div class="content-wrap__img"><g-image src="~/assets/images/vanno.jpg" /></div>
-        <div class="hi-krux__text">
-          <h4>What the krUX is going on?!</h4>
-          <p>Get the latest news from KRIG and the krUX product.</p>
-          <a href="/" class="button button--cta">Sign me up!</a>
-        </div>
-      </section>
+      <div class="hi-krux">
+        <section class="content-wrap vanno-puff">
+          <h2 class="hi-krux__headline">Vanno's up?</h2>
+          <div class="content-wrap__img"><g-image src="~/assets/images/vanno.jpg" /></div>
+          <div class="hi-krux__text">
+            <h4>What the krUX is going on?!</h4>
+            <p>Get the latest news from KRIG and the krUX product.</p>
+            <a href="/" class="button button--cta">Sign me up!</a>
+          </div>
+        </section>
       </div>
 
       <div class="hi-buddies" v-scroll-reveal.reset>
@@ -53,7 +53,24 @@
           <a href="https://www.redbull.com/se-sv/energydrink/" class="buddy" target="_blank"><g-image src="~/assets/images/studieforbunden.png" /></a>
         </section>
       </div>
+
+      <div class="container" v-rellax data-rellax-speed="2" data-rellax-percentage="0.8">
+        <div class="hi-there" v-scroll-reveal.reset>
+          <section class="content-wrap up-puff intro-puff">
+            <h2>What's up?</h2>
+            <h3>What we do</h3>
+            <p>UX design and front end development for <span><a class="up--link" href="https://www.njorda.se/">Njorda app</a></span></p>
+            <p>Design and development for <span><a class="up--link" href="https://menskompetens.se/">Menskompetens</a></span></p>
+            <p>Development for <span><a class="up--link" href="https://www.smslivraddare.se/">SMS-Livräddare</a></span></p>
+            <h3>What they say</h3>
+            <p>BREAKIT <span><a class="up--link" href="https://www.breakit.se/artikel/19279/krigio-flyttade-fran-stan-till-landet-man-har-en-annan-frihet">Moving the HQ</a></span> and
+              <span><a class="up--link" href="https://www.breakit.se/artikel/22244/skaffar-getter-till-foretaget-tar-det-har-ganget-impact-challenge-pa-storst-allvar-av-alla/%20target="> Impact Challenge</a></span></p>
+              <p>Tycker om Ovanåker <span><a class="up--link" href="https://www.ovanaker.se/omkommunen/informationochkommunikation/tyckeromovanakerfdfordeledsbynalfta/artiklarurtyckeromovanaker/enannanlivskvalitet.5618.html">A different life quality</a></span></p>
+          </section>
+        </div>
+      </div>
     </div>
+
   </Layout>
 </template>
 
@@ -209,10 +226,6 @@ export default {
     position: absolute;
     max-width: 45%;
   }
-
-  h3 {
-    color: yellow;
-  }
 }
 
 .vanno-puff {
@@ -257,7 +270,7 @@ export default {
 
     p {
       font-size: 0.875rem;
-      width: 70%;
+      width: 60%;
     }
   }
 }
@@ -315,6 +328,10 @@ export default {
   text-decoration: none;
   font-weight: 600;
   text-transform: uppercase;
+}
+
+.up--link {
+  color: yellow;
 }
 
 @keyframes "blink" {

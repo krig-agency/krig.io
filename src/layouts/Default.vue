@@ -12,7 +12,7 @@
         <g-image class="footer--click-icon" src="~/assets/images/bye.svg" />
       </div>
       <div class="footer--content">
-        <p>KRIGio AB  I  Galvsbo 666  I  <span><a href="tel:0739825395">073-9825395</a></span> I  <span><a href="mailto:hello@krig.io">hello@krig.io</a></span></p>
+        <p>KRIG Agency I <span><a href="tel:0739825395">073-9825395</a></span> I <span><a href="mailto:hello@krig.io">hello@krig.io</a></span></p>
       </div>
     </footer>
   </div>
@@ -87,6 +87,10 @@ h3 {
   font-size: 1.5rem;
 }
 
+.yellow {
+  color: yellow;
+}
+
 .content-wrap {
   position: relative;
   // width: 50%;
@@ -129,10 +133,6 @@ h3 {
   color: blue;
   width: auto;
   text-align: center;
-
-  p {
-    margin: 0 4rem;
-  }
 
   @include sm {
     margin: 20px;
