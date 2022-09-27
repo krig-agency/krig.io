@@ -52,10 +52,6 @@ body,
   background-repeat: no-repeat;
 }
 
-.layout {
-  // height: 100%;
-}
-
 html {
   font-size: 18px;
 }

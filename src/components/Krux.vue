@@ -399,7 +399,7 @@ svg {
   display: block;
   position: fixed;
   z-index: 100;
-  width: 100%;
+  min-width: 100vw;
   bottom: 0;
   left: 0;
 }
