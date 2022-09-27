@@ -48,10 +48,11 @@ body,
   background-image: url("~@/assets/images/krig-crew.png");
   background-attachment: fixed;
   background-size: cover;
-  background-position: bottom -50px right;
+  background-position: bottom right;
+  background-repeat: no-repeat;
 }
 
-.layoutc {
+.layout {
   // height: 100%;
 }
 
@@ -125,13 +126,20 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 20px;
+  margin: 0;
   background-color: white;
   height: 66px;
   color: blue;
   width: auto;
   text-align: center;
 
+  p {
+    margin: 0 4rem;
+  }
+
+  @include sm {
+    margin: 20px;
+  }
 }
 
 .footer--click {
@@ -141,11 +149,15 @@ h3 {
   align-items: center;
   justify-content: center;
   width: auto;
-  margin-left: 20px;
+  margin-left: 0;
   width: 66px;
   height: 66px;
   background-color: blue;
   color: white;
+
+  @include sm {
+    margin-left: 20px;
+  }
 }
 
 .footer--click-icon {
