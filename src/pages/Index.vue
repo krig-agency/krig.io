@@ -110,19 +110,15 @@ export default {
 
 <style lang="scss">
 
-// svg {
-//   fill: #eeff00;
-//   left: 50%;
-//   top: 50%;
-//   transform: translate(-50%,-50%);
-//   width: 400px;
-// }
-
 .content-wrap {
-  position: absolute;
+  position: static;
   margin: 5rem;
   align-self: start;
   box-sizing: border-box;
+
+  @include sm {
+    position: absolute;
+  }
 }
 
 .welcome-home {
@@ -188,12 +184,17 @@ export default {
 }
 
 .intro-puff {
-  position: absolute;
-  max-width: 45%;
+  position: static;
+  max-width: 100%;
   color: white;
   background-color: black;
   box-shadow: 0 10px 50px 2px rgba(0,0,0,0.05);
   padding: 1.25rem 4rem 3.25rem 4rem;
+
+  @include sm {
+    position: absolute;
+    max-width: 45%;
+  }
 
   h3 {
     color: yellow;
@@ -202,16 +203,25 @@ export default {
 
 .vanno-puff {
   position: relative;
-  max-width: 30%;
+  max-width: 100%;
   align-self: flex-start;
   left: 0;
   padding: 0;
   color: white;
   box-shadow: 0 10px 50px 2px rgba(0,0,0,0.05);
+
+  @include sm {
+    max-width: 30%;
+  }
 }
 
 .hi-krux {
   display: flex;
+  flex-direction: column;
+
+  @include sm {
+    flex-direction: row;
+  }
 
   &__headline {
     position: absolute;
@@ -235,11 +245,15 @@ export default {
 }
 
 .hi-buddies {
-  max-width: 45%;
+  max-width: 100%;
   background-color: white;
   align-self: flex-end;
   margin: 5rem;
   box-shadow: 0 10px 50px 2px rgba(0,0,0,0.05);
+
+  @include sm {
+    max-width: 45%;
+  }
 
   .buddies-section {
     position: relative;
