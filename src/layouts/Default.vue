@@ -150,7 +150,7 @@ h3 {
 
 .footer--click-icon {
   position: absolute;
-  width: 40px;
-  height: 40px;
+  width: 46px;
+  height: 46px;
 }
 </style>

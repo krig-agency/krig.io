@@ -48,17 +48,7 @@
         </section>
       </div>
     </div>
-    <div class="more-krig">
-      <section class="insta-post content-wrap">
-        <blockquote style = 'max-width:100%; background:-color:black;' class='instagram-media' data-instgrm-version='14'>
-        <!-- replace this href with the link to the post -->
-        <a href='https://www.instagram.com/p/CWA2UbCs6x_/' ></a>
-      </blockquote>
-    </section>
-    </div>
-</div>
-
-</Layout>
+  </Layout>
 </template>
 
 <page-query>
@@ -78,16 +68,14 @@
 <script>
 import PostList from '../components/PostList';
 import VScrollin from 'vue-scrollin';
-// import InstagramEmbed from 'vue-instagram-embed';
-
-// import VueScrollSnap from "vue-scroll-snap";
+import VueScrollSnap from "vue-scroll-snap";
 // import InstaPost from '../components/InstaPost'
 
 export default {
   components: {
     PostList,
     "v-scrollin": VScrollin,
-    // InstagramEmbed,
+    // InstaPost,
   },
   metaInfo: {
     title: 'KRIG digital agency'
@@ -122,30 +110,19 @@ export default {
 
 <style lang="scss">
 
-.insta-post {
-  max-width: 100%;
-
-  @include sm {
-    max-width: 30%;
-  }
-  .instagram-media {
-    background-color: black !important;
-
-    body {
-      background-color: black !important;
-    }
-  }
-}
+// svg {
+//   fill: #eeff00;
+//   left: 50%;
+//   top: 50%;
+//   transform: translate(-50%,-50%);
+//   width: 400px;
+// }
 
 .content-wrap {
-  position: static;
+  position: absolute;
   margin: 5rem;
   align-self: start;
   box-sizing: border-box;
-
-  @include sm {
-    position: absolute;
-  }
 }
 
 .welcome-home {
@@ -207,52 +184,34 @@ export default {
 .hi-there {
   display: flex;
   justify-content: flex-end;
-  height: auto;
+  height: 100vh;
+}
 
-  @include sm {
-    height: 100vh;
-  }
+.intro-puff {
+  position: absolute;
+  max-width: 45%;
+  color: white;
+  background-color: black;
+  box-shadow: 0 10px 50px 2px rgba(0,0,0,0.05);
+  padding: 1.25rem 4rem 3.25rem 4rem;
 
-  .intro-puff {
-    position: static;
-    max-width: 100%;
-    color: white;
-    background-color: black;
-    box-shadow: 0 10px 50px 2px rgba(0,0,0,0.05);
-    padding: 1.25rem 4rem 3.25rem 4rem;
-
-    @include md {
-      position: absolute;
-      max-width: 45%;
-    }
-
-    h3 {
-      color: yellow;
-    }
+  h3 {
+    color: yellow;
   }
 }
 
 .vanno-puff {
   position: relative;
-  max-width: 80%;
+  max-width: 30%;
   align-self: flex-start;
   left: 0;
   padding: 0;
   color: white;
   box-shadow: 0 10px 50px 2px rgba(0,0,0,0.05);
-
-  @include md {
-    max-width: 30%;
-  }
 }
 
 .hi-krux {
   display: flex;
-  flex-direction: column;
-
-  @include md {
-    flex-direction: row;
-  }
 
   &__headline {
     position: absolute;
@@ -276,15 +235,11 @@ export default {
 }
 
 .hi-buddies {
-  max-width: 100%;
-  background-color: #fff !important;
+  max-width: 45%;
+  background-color: white;
   align-self: flex-end;
   margin: 5rem;
   box-shadow: 0 10px 50px 2px rgba(0,0,0,0.05);
-
-  @include md {
-    max-width: 45%;
-  }
 
   .buddies-section {
     position: relative;
@@ -303,15 +258,6 @@ export default {
         filter: none;
       }
     }
-  }
-}
-
-.more-krig {
-  display: flex;
-
-  iframe {
-    max-width: 100% !important;
-    min-width: 100% !important;
   }
 }
 
@@ -339,14 +285,6 @@ export default {
   text-transform: uppercase;
 }
 
-/* INstagram embed hacking */
-
-.Embed {
-  .Header {
-    background-color: green;
-  }
-}
-
 @keyframes "blink" {
   from, to {
     opacity: 0;
@@ -362,9 +300,9 @@ $items: 4;
 $animationSpeed: 13;
 
 // Calculate animation time in seconds (how long the fade lasts)
-$animationTime: calc(0s + $totalTime / ($items * $animationSpeed * 2));
+$animationTime: 0s + calc($totalTime / ($items * $animationSpeed * 2));
 // Calculate show time in seconds (how long the element is displayed)
-$showTime: 0s + $totalTime - calc(($animationTime * $items) / $items);;
+$showTime: calc((0s + $totalTime - calc($animationTime * $items)) / $items);
 
 // Set animation for each element
 @for $i from 1 through $items {
