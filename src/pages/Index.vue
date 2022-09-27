@@ -112,12 +112,16 @@ export default {
 
 .content-wrap {
   position: static;
-  margin: 5rem;
+  margin: 2rem;
   align-self: start;
   box-sizing: border-box;
 
   @include sm {
     position: absolute;
+    margin: 3rem;
+  }
+  @include md {
+    margin: 5rem;
   }
 }
 
@@ -180,7 +184,11 @@ export default {
 .hi-there {
   display: flex;
   justify-content: flex-end;
-  height: 100vh;
+  height: auto;
+
+  @include sm {
+    height: 100vh;
+  }
 }
 
 .intro-puff {
