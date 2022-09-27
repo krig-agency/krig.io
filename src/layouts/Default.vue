@@ -12,7 +12,7 @@
         <g-image class="footer--click-icon" src="~/assets/images/bye.svg" />
       </div>
       <div class="footer--content">
-        <p>KRIGio AB  I  Galvsbo 666  I  073-9825395  I  hello@krig.io</p>
+        <p>KRIGio AB  I  Galvsbo 666  I  <span><a href="tel:0739825395">073-9825395</a></span> I  <span><a href="mailto:hello@krig.io">hello@krig.io</a></span></p>
       </div>
     </footer>
   </div>
@@ -50,6 +50,7 @@ body,
   background-size: cover;
   background-position: bottom right;
   background-repeat: no-repeat;
+  overflow-x: hidden;
 }
 
 html {

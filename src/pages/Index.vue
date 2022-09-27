@@ -234,9 +234,13 @@ export default {
   &__headline {
     position: absolute;
     top: 2rem;
-    right: -4rem;
+    right: 0;
     font-style: italic;
     text-shadow: 4px 4px 0px black;
+
+    @include sm {
+      right: -4rem;
+    }
   }
 
   &__text {

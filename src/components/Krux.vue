@@ -400,7 +400,7 @@ svg {
   position: fixed;
   z-index: 100;
   width: 100%;
-  bottom: 0;
+  top: 0;
   left: 0;
 }
 @media only screen and (min-width: 768px) {
