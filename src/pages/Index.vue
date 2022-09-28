@@ -279,11 +279,12 @@ export default {
   max-width: 100%;
   background-color: white;
   align-self: flex-end;
-  margin: 5rem;
+  margin: 2rem;
   box-shadow: 0 10px 50px 2px rgba(0,0,0,0.05);
 
   @include sm {
     max-width: 45%;
+    margin: 5rem;
   }
 
   .buddies-section {
@@ -291,9 +292,13 @@ export default {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 50px;
-    padding: 4rem;
+    padding: 3rem;
     justify-items: center;
     align-items: center;
+
+    @include sm {
+      padding: 4rem;
+    }
 
     img {
       -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */

@@ -137,29 +137,6 @@ h3 {
   font-weight: bold;
 }
 
-.footer--content {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0;
-  padding-left: 106px;
-  padding-right: 40px;
-  background-color: white;
-  height: 66px;
-  color: blue;
-  width: auto;
-  text-align: center;
-
-  @include sm {
-    margin: 20px;
-  }
-}
-
-.mail-link {
-  font-weight: 600;
-}
-
 .footer--click {
   position: absolute;
   z-index: 1;
@@ -168,10 +145,14 @@ h3 {
   justify-content: center;
   width: auto;
   margin-left: 0;
-  width: 66px;
+  width: 100vw;
   height: 66px;
   background-color: blue;
   color: white;
+
+  @include mini {
+    width: 66px;
+  }
 
   @include sm {
     margin-left: 20px;
@@ -184,8 +165,40 @@ h3 {
   height: 46px;
 }
 
+.footer--content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 66px;
+  background-color: white;
+  height: 66px;
+  color: blue;
+  width: auto;
+  text-align: center;
+
+  @include mini {
+    padding-left: 86px;
+    padding-right: 10px;
+    padding-top: 0;
+  }
+
+  @include sm {
+    margin: 20px;
+    padding-left: 106px;
+    padding-right: 40px;
+  }
+}
+
+.mail-link {
+  font-weight: 600;
+}
+
 .some-icon {
-  margin: 0 0.5rem;
+  margin: 0 10px;
 }
 
 </style>
