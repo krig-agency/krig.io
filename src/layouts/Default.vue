@@ -11,6 +11,14 @@
       <div class="footer--click">
         <g-image class="footer--click-icon" src="~/assets/images/bye.svg" />
       </div>
+      <!-- <div>
+        <a class="accessibility-menu-item" :data-tooltip="accessibileFontSizeText" v-bind:class="{ active: accessibilityStates.accessibileFontSize }" @click="toggleState('accessibileFontSize')" :aria-label="accessibileFontSizeText">
+          <i class="accessibility-menu-item-icon">
+            <icon-base v-if='accessibilityStates.accessibileFontSize' width="46" height="46" icon-color="white" icon-name="IconBye"><icon-bye /></icon-base>
+            <icon-base v-else width="46" height="46" icon-color="white" icon-name="IconHi"><icon-hi /></icon-base>
+          </i>
+        </a>
+      </div> -->
       <div class="footer--content">
         <p>KRIG Agency I <span><a href="tel:0739825395">073-9825395</a></span> I <span><a href="mailto:hello@krig.io">hello@krig.io</a></span></p>
       </div>
@@ -19,6 +27,8 @@
 </template>
 
 <script>
+// import IconBye from './components/icons/IconBye.vue'
+// import IconHi from './icons/IconHi.vue'
 import PostList from '../components/PostList';
 import Krux from '../components/Krux';
 
