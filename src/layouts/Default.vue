@@ -20,7 +20,12 @@
         </a>
       </div> -->
       <div class="footer--content">
-        <p>KRIG Agency I <span><a href="tel:0739825395">073-9825395</a></span> I <span><a href="mailto:hello@krig.io">hello@krig.io</a></span></p>
+        <p>KRIG Agency I <span><a href="tel:0739825395">073-9825395</a></span> I <span><a class="mail-link"href="mailto:hello@krig.io">hello@krig.io</a></span></p>
+        <div class="some">
+          <a href="https://www.facebook.com/krigio.agency"><g-image class="some-icon" src="~/assets/images/icon-fb.svg" /></a>
+          <a href="https://www.instagram.com/krig_agency/"><g-image class="some-icon" src="~/assets/images/icon-instagram.svg" /></a>
+          <a href="https://github.com/krig-agency"><g-image class="some-icon" src="~/assets/images/icon-github.svg" /></a>
+        </div>
       </div>
     </footer>
   </div>
@@ -136,8 +141,10 @@ h3 {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin: 0;
+  padding-left: 106px;
+  padding-right: 40px;
   background-color: white;
   height: 66px;
   color: blue;
@@ -147,6 +154,10 @@ h3 {
   @include sm {
     margin: 20px;
   }
+}
+
+.mail-link {
+  font-weight: 600;
 }
 
 .footer--click {
@@ -172,4 +183,9 @@ h3 {
   width: 46px;
   height: 46px;
 }
+
+.some-icon {
+  margin: 0 0.5rem;
+}
+
 </style>
