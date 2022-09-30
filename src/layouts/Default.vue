@@ -138,7 +138,10 @@ h3 {
 }
 
 .footer {
-  position: relative;
+  position: absolute;
+  right: 0;
+  left: 0;
+  width: 100vw;
 }
 
 .footer--click {
@@ -159,7 +162,7 @@ h3 {
   }
 
   @include sm {
-    margin-left: 20px;
+    margin: 20px;
   }
 }
 
@@ -171,6 +174,7 @@ h3 {
 }
 
 .footer--content {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
