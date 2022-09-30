@@ -23,7 +23,7 @@
       </div>
     </div>
 
-    <div class="container" v-rellax data-rellax-speed="-5" data-rellax-percentage="0.8">
+    <div class="container" v-rellax data-rellax-speed="-2" data-rellax-percentage="0.2">
       <div class="hi-krux">
         <section class="content-wrap vanno-puff">
           <h2 class="hi-krux__headline">Vanno's up?</h2>
@@ -31,7 +31,7 @@
           <div class="hi-krux__text">
             <h4>What the krUX is going on?!</h4>
             <p>Get the latest news from KRIG and the krUX product.</p>
-            <a href="/" class="button button--cta">Sign me up!</a>
+            <a href="mailto:hello@krig.io"class="button button--cta">Sign me up!</a>
           </div>
         </section>
       </div>
@@ -51,10 +51,11 @@
           <a href="https://www.smslivraddare.se/" class="buddy" target="_blank"><g-image src="~/assets/images/sms-logo.svg" /></a>
           <a href="https://studieforbunden.se/" class="buddy" target="_blank"><g-image src="~/assets/images/red-bull-logo.png" /></a>
           <a href="https://www.redbull.com/se-sv/energydrink/" class="buddy" target="_blank"><g-image src="~/assets/images/studieforbunden.png" /></a>
+          <!-- <a href="https://ikff.se/" class="buddy" target="_blank"><g-image src="~/assets/images/ikff_logo.svg" /></a> -->
         </section>
       </div>
 
-      <div class="container" v-rellax data-rellax-speed="2" data-rellax-percentage="0.8">
+      <div class="container" v-rellax data-rellax-speed="2" data-rellax-percentage="0.6">
         <div class="hi-there" v-scroll-reveal.reset>
           <section class="content-wrap up-puff intro-puff">
             <h2>What's up?</h2>
@@ -220,7 +221,11 @@ export default {
   color: white;
   background-color: black;
   box-shadow: 0 10px 50px 2px rgba(0,0,0,0.05);
-  padding: 1.25rem 4rem 3.25rem 4rem;
+  padding: 2rem;
+
+  @include mini {
+    padding: 1.25rem 3rem 3.25rem 3rem;
+  }
 
   @include sm {
     position: absolute;
@@ -255,6 +260,7 @@ export default {
     top: 2rem;
     right: 0;
     font-style: italic;
+    text-align: right;
     text-shadow: 4px 4px 0px black;
 
     @include sm {

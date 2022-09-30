@@ -2,9 +2,9 @@
   <div class="layout">
     <header class="header">
       <Krux />
-      <strong>
+      <!-- <strong>
         <g-link to="/">{{ $static.metadata.siteName }}</g-link>
-      </strong>
+      </strong> -->
     </header>
     <slot/>
     <footer class="footer">
@@ -137,6 +137,10 @@ h3 {
   font-weight: bold;
 }
 
+.footer {
+  position: relative;
+}
+
 .footer--click {
   position: absolute;
   z-index: 1;
@@ -163,10 +167,10 @@ h3 {
   position: absolute;
   width: 46px;
   height: 46px;
+  animation: wave 2.1s 0.6s infinite;
 }
 
 .footer--content {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -191,6 +195,15 @@ h3 {
     padding-left: 106px;
     padding-right: 40px;
   }
+
+  p {
+    font-size: 14px;
+    text-align: left;
+
+    @include mini {
+      font-size: 1rem;
+    }
+  }
 }
 
 .mail-link {
@@ -199,6 +212,39 @@ h3 {
 
 .some-icon {
   margin: 0 10px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(16deg);
+  }
+  20% {
+    transform: rotate(-6deg);
+  }
+  30% {
+    transform: rotate(16deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(16deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 </style>
