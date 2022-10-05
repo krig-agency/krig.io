@@ -27,7 +27,8 @@
 // import IconBye from './components/icons/IconBye.vue'
 // import IconHi from './icons/IconHi.vue'
 import PostList from '../components/PostList';
-import Krux from '../components/Krux';
+// import Krux from '../components/Krux';
+import Krux from '../components/UxOptions';
 
 export default {
   components: {
@@ -36,7 +37,12 @@ export default {
   },
   data: {
     active: false,
-  }
+  },
+  plugins: [
+    {
+      use: 'gridsome-plugin-modal'
+    }
+  ]
 }
 </script>
 
