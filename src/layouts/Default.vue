@@ -2,23 +2,30 @@
   <div class="layout">
     <header class="header">
       <Krux />
-      <strong>
-        <g-link to="/">{{ $static.metadata.siteName }}</g-link>
-      </strong>
-    </header>
-    <slot/>
-    <footer class="footer">
-      <div class="footer--click">
-        <g-image class="footer--click-icon" src="~/assets/images/bye.svg" />
+      <!-- <strong>
+      <g-link to="/">{{ $static.metadata.siteName }}</g-link>
+    </strong> -->
+  </header>
+  <slot/>
+  <footer class="footer">
+    <div class="footer--click">
+      <g-image class="footer--click-icon" src="~/assets/images/bye.svg" />
+    </div>
+    <div class="footer--content">
+      <p>KRIG Agency I <span><a href="tel:0739825395">073-9825395</a></span> I <span><a class="mail-link"href="mailto:hello@krig.io">hello@krig.io</a></span></p>
+      <div class="some">
+        <a href="https://www.facebook.com/krigio.agency"><g-image class="some-icon" src="~/assets/images/icon-fb.svg" /></a>
+        <a href="https://www.instagram.com/krig_agency/"><g-image class="some-icon" src="~/assets/images/icon-instagram.svg" /></a>
+        <a href="https://github.com/krig-agency"><g-image class="some-icon" src="~/assets/images/icon-github.svg" /></a>
       </div>
-      <div class="footer--content">
-        <p>KRIGio AB  I  Galvsbo 666  I  073-9825395  I  hello@krig.io</p>
-      </div>
-    </footer>
-  </div>
+    </div>
+  </footer>
+</div>
 </template>
 
 <script>
+// import IconBye from './components/icons/IconBye.vue'
+// import IconHi from './icons/IconHi.vue'
 import PostList from '../components/PostList';
 import Krux from '../components/Krux';
 
@@ -26,6 +33,9 @@ export default {
   components: {
     Krux,
     PostList,
+  },
+  data: {
+    active: false,
   }
 }
 </script>
@@ -43,16 +53,22 @@ export default {
 html,
 body,
 .layout {
-  // height: 100vh;
   background-color: #fff;
   background-image: url("~@/assets/images/krig-crew.png");
   background-attachment: fixed;
   background-size: cover;
-  background-position: bottom -50px right;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
-.layoutc {
-  // height: 100%;
+.big {
+  font-size: 30px;
+}
+
+p{
+  transition:all 0.5s ease-out;
 }
 
 html {
@@ -89,6 +105,10 @@ h3 {
   font-size: 1.5rem;
 }
 
+.yellow {
+  color: yellow;
+}
+
 .content-wrap {
   position: relative;
   // width: 50%;
@@ -119,19 +139,16 @@ h3 {
   src: url('../assets/fonts/din-bold.woff');
   font-weight: bold;
 }
+#mobile-toggle {
+  display: block;
+  background: green;
+}
 
-.footer--content {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 20px;
-  background-color: white;
-  height: 66px;
-  color: blue;
-  width: auto;
-  text-align: center;
-
+.footer {
+  position: absolute;
+  right: 0;
+  left: 0;
+  width: 100vw;
 }
 
 .footer--click {
@@ -141,16 +158,104 @@ h3 {
   align-items: center;
   justify-content: center;
   width: auto;
-  margin-left: 20px;
-  width: 66px;
+  margin-left: 0;
+  width: 100vw;
   height: 66px;
   background-color: blue;
   color: white;
+
+  @include mini {
+    width: 66px;
+  }
+
+  @include sm {
+    margin: 20px;
+  }
 }
 
 .footer--click-icon {
   position: absolute;
   width: 46px;
   height: 46px;
+  animation: wave 2.1s 0.6s infinite;
 }
+
+.footer--content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 66px;
+  background-color: white;
+  height: 66px;
+  color: blue;
+  width: auto;
+  text-align: center;
+
+  @include mini {
+    padding-left: 86px;
+    padding-right: 10px;
+    padding-top: 0;
+  }
+
+  @include sm {
+    margin: 20px;
+    padding-left: 106px;
+    padding-right: 40px;
+  }
+
+  p {
+    font-size: 14px;
+    text-align: left;
+
+    @include mini {
+      font-size: 1rem;
+    }
+  }
+}
+
+.mail-link {
+  font-weight: 600;
+}
+
+.some-icon {
+  margin: 0 10px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(16deg);
+  }
+  20% {
+    transform: rotate(-6deg);
+  }
+  30% {
+    transform: rotate(16deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(16deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
 </style>

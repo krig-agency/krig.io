@@ -9,7 +9,6 @@
       <transition name="fade">
         <div class='accessibility-toolbar' v-if="isMobile || showToolbar">
           <ul class="accessibility-items">
-
             <li class="accessibility-item">
               <a class="accessibility-menu-item" :data-tooltip="accessibileFontSizeText" v-bind:class="{ active: accessibilityStates.accessibileFontSize }" @click="toggleState('accessibileFontSize')" :aria-label="accessibileFontSizeText">
                 <i class="accessibility-menu-item-icon">
@@ -400,7 +399,7 @@ svg {
   position: fixed;
   z-index: 100;
   width: 100%;
-  bottom: 0;
+  top: 0;
   left: 0;
 }
 @media only screen and (min-width: 768px) {

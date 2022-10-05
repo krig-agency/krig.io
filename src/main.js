@@ -1,18 +1,21 @@
 
 import DefaultLayout from '~/layouts/Default.vue'
-import VueParallaxJs from 'vue-parallax-js'
+import VueScrollReveal from 'vue-scroll-reveal'
+import VueRellax from 'vue-rellax'
 
 export default function (Vue, { router, head, isClient }) {
-  const options = {
-    minWidth: 768,   /* minumum window width for parallax to take effect */
-    className: 'fart',  /* this class gets added to all elements
-    // that are being animated, by default none */
-    // container: 'prutt',  /* element that actually scrolls, by default it's window */
-  }
-  Vue.use(VueParallaxJs, options)
-  // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
-  // Use vue-parallax-js to the project
+
+  Vue.use(VueRellax)
+
+  // OR specifying custom default options for all uses of the directive
+  Vue.use(VueScrollReveal, {
+    class: 'v-scroll-reveal', // A CSS class applied to elements with the v-scroll-reveal directive; useful for animation overrides.
+    duration: 1000,
+    scale: 1,
+    distance: '2rem',
+    mobile: false
+  });
 
   head.script.push({
     src: 'https://www.instagram.com/embed.js',
