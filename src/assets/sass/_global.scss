@@ -3,6 +3,8 @@ $screen-mini-min: 576px; // Small tablets and large smartphones (landscape view)
 
 $screen-sm-min: 768px; // Small tablets and large smartphones (landscape view)
 
+$screen-sm-max: 767px;
+
 $screen-md-min: 992px; // Small tablets (portrait view)
 
 $screen-lg-min: 1124px; // Tablets and small desktops
@@ -20,6 +22,12 @@ $screen-xxl-min: 2200px; // Extra large tablets and desktops
 
 @mixin sm {
   @media (min-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+
+@mixin sm-max {
+  @media (max-width: #{$screen-sm-max}) {
     @content;
   }
 }

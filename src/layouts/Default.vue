@@ -3,32 +3,24 @@
     <header class="header">
       <Krux />
       <!-- <strong>
-        <g-link to="/">{{ $static.metadata.siteName }}</g-link>
-      </strong> -->
-    </header>
-    <slot/>
-    <footer class="footer">
-      <div class="footer--click">
-        <g-image class="footer--click-icon" src="~/assets/images/bye.svg" />
+      <g-link to="/">{{ $static.metadata.siteName }}</g-link>
+    </strong> -->
+  </header>
+  <slot/>
+  <footer class="footer">
+    <div class="footer--click">
+      <g-image class="footer--click-icon" src="~/assets/images/bye.svg" />
+    </div>
+    <div class="footer--content">
+      <p>KRIG Agency I <span><a href="tel:0739825395">073-9825395</a></span> I <span><a class="mail-link"href="mailto:hello@krig.io">hello@krig.io</a></span></p>
+      <div class="some">
+        <a href="https://www.facebook.com/krigio.agency"><g-image class="some-icon" src="~/assets/images/icon-fb.svg" /></a>
+        <a href="https://www.instagram.com/krig_agency/"><g-image class="some-icon" src="~/assets/images/icon-instagram.svg" /></a>
+        <a href="https://github.com/krig-agency"><g-image class="some-icon" src="~/assets/images/icon-github.svg" /></a>
       </div>
-      <!-- <div>
-        <a class="accessibility-menu-item" :data-tooltip="accessibileFontSizeText" v-bind:class="{ active: accessibilityStates.accessibileFontSize }" @click="toggleState('accessibileFontSize')" :aria-label="accessibileFontSizeText">
-          <i class="accessibility-menu-item-icon">
-            <icon-base v-if='accessibilityStates.accessibileFontSize' width="46" height="46" icon-color="white" icon-name="IconBye"><icon-bye /></icon-base>
-            <icon-base v-else width="46" height="46" icon-color="white" icon-name="IconHi"><icon-hi /></icon-base>
-          </i>
-        </a>
-      </div> -->
-      <div class="footer--content">
-        <p>KRIG Agency I <span><a href="tel:0739825395">073-9825395</a></span> I <span><a class="mail-link"href="mailto:hello@krig.io">hello@krig.io</a></span></p>
-        <div class="some">
-          <a href="https://www.facebook.com/krigio.agency"><g-image class="some-icon" src="~/assets/images/icon-fb.svg" /></a>
-          <a href="https://www.instagram.com/krig_agency/"><g-image class="some-icon" src="~/assets/images/icon-instagram.svg" /></a>
-          <a href="https://github.com/krig-agency"><g-image class="some-icon" src="~/assets/images/icon-github.svg" /></a>
-        </div>
-      </div>
-    </footer>
-  </div>
+    </div>
+  </footer>
+</div>
 </template>
 
 <script>
@@ -41,6 +33,9 @@ export default {
   components: {
     Krux,
     PostList,
+  },
+  data: {
+    active: false,
   }
 }
 </script>
@@ -58,7 +53,6 @@ export default {
 html,
 body,
 .layout {
-  // height: 100vh;
   background-color: #fff;
   background-image: url("~@/assets/images/krig-crew.png");
   background-attachment: fixed;
@@ -66,6 +60,15 @@ body,
   background-position: bottom right;
   background-repeat: no-repeat;
   overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.big {
+  font-size: 30px;
+}
+
+p{
+  transition:all 0.5s ease-out;
 }
 
 html {
@@ -135,6 +138,10 @@ h3 {
   font-family: din;
   src: url('../assets/fonts/din-bold.woff');
   font-weight: bold;
+}
+#mobile-toggle {
+  display: block;
+  background: green;
 }
 
 .footer {
