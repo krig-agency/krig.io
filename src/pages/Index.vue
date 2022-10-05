@@ -82,29 +82,14 @@
     </Layout>
   </template>
 
-  <page-query>
-    query {
-      allPost {
-        edges {
-          node {
-            path
-            title
-            excerpt
-          }
-        }
-      }
-    }
-  </page-query>
-
   <script>
-  import PostList from '../components/PostList';
+  // import PostList from '../components/PostList';
   import VScrollin from 'vue-scrollin';
   import VueScrollSnap from "vue-scroll-snap";
   import InstaPost from '../components/InstaPost'
 
   export default {
     components: {
-      PostList,
       "v-scrollin": VScrollin,
       InstaPost,
     },
@@ -193,7 +178,7 @@
       position: absolute;
       bottom: 0;
       left: 20px;
-      z-index: 100;
+      z-index: 1;
       margin: 0;
       color: white;
       text-align: left;
