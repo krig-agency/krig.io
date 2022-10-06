@@ -60,13 +60,27 @@ html,
 body,
 .layout {
   background-color: #fff;
+  box-sizing: border-box;
+
+  @include sm {
+  }
+}
+
+.layout {
+  height: 100%;
+  background-color: #fff;
   background-image: url("~@/assets/images/krig-crew.png");
-  background-attachment: fixed;
   background-size: cover;
-  background-position: bottom right;
+  background-position: center center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   overflow-x: hidden;
   box-sizing: border-box;
+
+  @include sm {
+    background-size: cover;
+    background-position: center bottom;
+  }
 }
 
 .big {
@@ -96,10 +110,14 @@ img {
 h1 {
   position: relative;
   display: block;
-  font-size: 9rem;
+  font-size: 7.5rem;
   text-transform: uppercase;
   transition: all 0.2s ease;
   font-weight: 800;
+
+  @include mini {
+    font-size: 9rem;
+  }
 }
 
 h2 {
@@ -151,7 +169,7 @@ h3 {
 }
 
 .footer {
-  position: absolute;
+  position: relative;
   right: 0;
   left: 0;
   width: 100vw;
@@ -175,7 +193,7 @@ h3 {
   }
 
   @include sm {
-    margin: 20px;
+    margin-left: 20px;
   }
 }
 

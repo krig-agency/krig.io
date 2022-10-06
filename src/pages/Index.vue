@@ -181,7 +181,7 @@
 
     .headline-mega {
       position: absolute;
-      bottom: 0;
+      bottom: 2rem;
       left: 20px;
       z-index: 1;
       margin: 0;
