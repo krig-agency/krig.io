@@ -21,7 +21,7 @@
       <section class="content-wrap intro-puff">
         <h2>All female Swedish digital agency.</h2>
         <h3 class="yellow">A combination of programming for the web and designing for the eye and mind.</h3>
-        <p>Vår passion ligger i att designa och utveckla för webben med fokus på tillgänglighet, UX, UI och programmering. Sen 2017 har vi byggt användarupplevelser och tekniska lösningar, med och för, vettiga organisationer, företag och samarbetspartners som jobbar med våra hjärtefrågor.</p>
+        <p>KRIG's passion is to design and develop the web with focus on accessibility, UX and UI. KRIG has built user experiences and technical solutions since 2017, with and for sensible organisations, companies and collaborators who has similar matters of the heart.</p>
       </section>
     </div>
 
@@ -71,7 +71,7 @@
           <p>UX design and front end development for <span><a class="up--link" href="https://www.njorda.se/">Njorda app</a></span></p>
           <p>Design and development for <span><a class="up--link" href="https://menskompetens.se/">Menskompetens</a></span></p>
           <p>Development for <span><a class="up--link" href="https://www.smslivraddare.se/">SMS-Livräddare</a></span></p>
-          <h3>What they say</h3>
+          <h3 class="say-headline">What they say</h3>
           <p>BREAKIT <span><a class="up--link" href="https://www.breakit.se/artikel/19279/krigio-flyttade-fran-stan-till-landet-man-har-en-annan-frihet">Moving the HQ</a></span> and
             <span><a class="up--link" href="https://www.breakit.se/artikel/22244/skaffar-getter-till-foretaget-tar-det-har-ganget-impact-challenge-pa-storst-allvar-av-alla/%20target="> Impact Challenge</a></span></p>
             <p>Tycker om Ovanåker <span><a class="up--link" href="https://www.ovanaker.se/omkommunen/informationochkommunikation/tyckeromovanakerfdfordeledsbynalfta/artiklarurtyckeromovanaker/enannanlivskvalitet.5618.html">A different life quality</a></span></p>
@@ -257,6 +257,10 @@
         margin: 5rem;
       }
     }
+  }
+
+  .say-headline {
+    margin-top: 3rem;
   }
 
   .intro-puff {
