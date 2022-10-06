@@ -264,7 +264,6 @@
     margin: 1rem;
 
     @include mini {
-      padding: 1.25rem 3rem 3.25rem 3rem;
       margin: 2rem;
     }
 
@@ -272,8 +271,13 @@
       max-width: 40%;
       margin: 3rem;
     }
+
     @include md {
       margin: 5rem 15rem 5rem;
+    }
+
+    @include xl {
+      padding: 1.25rem 3rem 3.25rem 3rem;
     }
   }
 
