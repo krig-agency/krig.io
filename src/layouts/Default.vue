@@ -67,11 +67,11 @@ body,
 }
 
 .layout {
-  height: 100%;
+  height: 100vh;
   background-color: #fff;
   background-image: url("~@/assets/images/krig-crew.png");
   background-size: cover;
-  background-position: center center;
+  background-position: top center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   overflow-x: hidden;
@@ -79,6 +79,7 @@ body,
 
   @include sm {
     background-size: cover;
+    background-attachment: fixed;
     background-position: center bottom;
   }
 }
