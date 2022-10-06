@@ -190,6 +190,10 @@
       line-height: 1;
       // mix-blend-mode: difference;
 
+      @include sm-max {
+        bottom: 6.5rem;
+      }
+
       .v-scrollin {
         display: inline-block;
       }
