@@ -227,6 +227,10 @@ h3 {
   font-weight: 600;
 }
 
+.some {
+  display: inherit;
+}
+
 .some-icon {
   margin: 0 10px;
   transition: all 0.2s ease;
