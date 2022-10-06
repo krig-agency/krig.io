@@ -287,18 +287,15 @@ export default {
 
   .accessibility-menu-item:hover {
     color: blue;
-    background: rgba(255, 255, 255, 0.5);
   }
 
   .accessibility-menu-item.active:hover {
-    background: rgba(0, 0, 255, 0.6);
     color: white;
   }
 
   .active {
     background-color: #2196F3;
     color: blue;
-    background: rgba(0, 0, 0, 0.05);
   }
   </style>
 
@@ -541,7 +538,7 @@ export default {
     width: 100%;
     height: 66px;
     transition: all 0.3s ease;
-    color: #BF344B;
+    color: blue;
     background: #F4F4F4;
     font-size: 30px;
     cursor: pointer;
@@ -826,7 +823,7 @@ svg {
   width: 100%;
   height: 66px;
   transition: all 0.3s ease;
-  color: #BF344B;
+  color: blue;
   background: #F4F4F4;
   font-size: 30px;
   cursor: pointer;

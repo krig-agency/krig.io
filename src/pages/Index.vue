@@ -147,13 +147,18 @@
 
   .content-wrap {
     position: static;
-    margin: 2rem;
+    margin: 1rem;
     align-self: flex-start;
     box-sizing: border-box;
+
+    @include mini {
+      margin: 2rem;
+    }
 
     @include sm {
       margin: 3rem;
     }
+
     @include md {
       margin: 5rem;
     }
@@ -176,7 +181,7 @@
 
     .headline-mega {
       position: absolute;
-      bottom: 0;
+      bottom: 2rem;
       left: 20px;
       z-index: 1;
       margin: 0;
@@ -256,19 +261,23 @@
     background-color: black;
     box-shadow: 0 10px 50px 2px rgba(0,0,0,0.05);
     padding: 2rem;
-
-    margin: 2rem;
+    margin: 1rem;
 
     @include mini {
-      padding: 1.25rem 3rem 3.25rem 3rem;
+      margin: 2rem;
     }
 
     @include sm {
       max-width: 40%;
       margin: 3rem;
     }
+
     @include md {
       margin: 5rem 15rem 5rem;
+    }
+
+    @include xl {
+      padding: 1.25rem 3rem 3.25rem 3rem;
     }
   }
 
@@ -325,16 +334,21 @@
 
   .insta-widget {
     // margin: 2rem;
-    padding: 2rem;
+    padding: 1rem;
     width: 100%;
     // margin: -10px;
     overflow: hidden;
     box-sizing: border-box;
 
+    @include mini {
+      padding: 2rem;
+    }
+
     @include sm {
       width: 40%;
       padding: 3rem;
     }
+
     @include md {
       padding: 5rem;
     }
@@ -353,12 +367,15 @@
     max-width: 100%;
     background-color: white;
     align-self: flex-end;
-    margin: 2rem;
+    margin: 1rem;
     box-shadow: 0 10px 50px 2px rgba(0,0,0,0.05);
+
+    @include mini {
+      margin: 2rem;
+    }
 
     @include sm {
       max-width: 45%;
-      margin: 2rem;
     }
 
     @include md {
