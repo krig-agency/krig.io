@@ -67,7 +67,7 @@ body,
 }
 
 .layout {
-  height: auto;
+  min-height: 100vh;
   background-color: #fff;
   background-image: url("~@/assets/images/krig-crew.png");
   background-size: cover;
