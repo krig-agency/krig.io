@@ -67,7 +67,7 @@ body,
 }
 
 .layout {
-  height: 100vh;
+  height: auto;
   background-color: #fff;
   background-image: url("~@/assets/images/krig-crew.png");
   background-size: cover;
@@ -78,6 +78,7 @@ body,
   box-sizing: border-box;
 
   @include sm {
+    height: 100%;
     background-size: cover;
     background-attachment: fixed;
     background-position: center bottom;
