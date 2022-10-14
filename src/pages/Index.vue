@@ -181,8 +181,8 @@
 
     .headline-mega {
       position: absolute;
-      bottom: 2rem;
-      left: 20px;
+      bottom: 20px;
+      left: 2rem;
       z-index: 1;
       margin: 0;
       color: white;
@@ -190,8 +190,9 @@
       line-height: 1;
       // mix-blend-mode: difference;
 
-      @include sm-max {
-        bottom: 6.5rem;
+      @include sm {
+        bottom: 1rem;
+        left: 2.5rem;
       }
 
       .v-scrollin {

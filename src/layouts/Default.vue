@@ -59,15 +59,14 @@ export default {
 html,
 body,
 .layout {
+  min-height: 100%;
   background-color: #fff;
   box-sizing: border-box;
-
-  @include sm {
-  }
 }
 
 .layout {
   min-height: 100vh;
+  height: 100vh;;
   background-color: #fff;
   background-image: url("~@/assets/images/krig-crew.png");
   background-size: cover;
@@ -80,7 +79,6 @@ body,
   @include sm {
     height: 100%;
     background-size: cover;
-    background-attachment: fixed;
     background-position: center bottom;
   }
 }
