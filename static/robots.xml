@@ -1,0 +1,5 @@
+Sitemap: https://krig.io/sitemap.xml
+
+User-agent:*
+Disallow: /legal
+Disallow: /privacy

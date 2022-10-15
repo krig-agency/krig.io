@@ -2,6 +2,7 @@
 import DefaultLayout from '~/layouts/Default.vue'
 // import VueScrollReveal from 'vue-scroll-reveal'
 import VueRellax from 'vue-rellax'
+import config from '../gridsome.config'
 
 export default function (Vue, { router, head, isClient }) {
   Vue.component('Layout', DefaultLayout)
@@ -16,9 +17,5 @@ export default function (Vue, { router, head, isClient }) {
   //   distance: '2rem',
   //   mobile: false
   // });
-
-  head.script.push({
-    src: 'https://www.instagram.com/embed.js',
-    async: true
-  })
+  // TODO: apply this component
 };

@@ -94,7 +94,7 @@
       InstaPost,
     },
     metaInfo: {
-      title: 'KRIG digital agency'
+      title: 'Hello there!'
     },
     methods: {
       mouseOver: function(){
