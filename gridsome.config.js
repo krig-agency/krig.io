@@ -23,8 +23,15 @@ function addStyleResource (rule) {
 }
 
 module.exports = {
-
-  siteName: 'KRIG',
+  siteName: 'KRIG agency',
+  siteDescription: "All female digital agency - web delvelopment, accessibility and UX design is our passion (for real)",
+  siteUrl: 'https://krig.io',
+  icon: 'src/favicon.png',
+  metadata: {
+    author: 'KRIG agency',
+    twitter: '@krig_agency',
+    // + whatever you want
+  },
   transformers: {
     remark: {
       externalLinksTarget: '_blank',
@@ -61,6 +68,12 @@ module.exports = {
       options: {
         publicPath: `/admin`,
         modulePath: `src/admin/index.js`
+      }
+    },
+    {
+      use: '@gridsome/plugin-google-analytics',
+      options: {
+        id: 'UA-136014030-1'
       }
     },
   ],
