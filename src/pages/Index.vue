@@ -60,9 +60,9 @@
     </div>
     <!-- <div class="container" v-rellax data-rellax-speed="2" data-rellax-percentage="0.6"> -->
     <div class="more-things">
-      <div class="insta-widget" v-rellax data-rellax-speed="1.5" data-rellax-mobile-speed="0">
+      <!-- <div class="insta-widget" v-rellax data-rellax-speed="1.5" data-rellax-mobile-speed="0">
         <InstaPost />
-      </div>
+      </div> -->
       <!-- <div class="hi-there" v-scroll-reveal.reset> -->
       <div class="whats-up" v-rellax data-rellax-speed="-0.5" data-rellax-mobile-speed="0">
         <section class="content-wrap up-puff intro-puff">
