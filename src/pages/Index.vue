@@ -45,7 +45,7 @@
           <a href="https://www.njorda.se/" class="buddy" target="_blank"><g-image src="~/assets/images/njorda-logo.svg" /></a>
           <a href="https://www.minnapalmqvist.com/" class="buddy" target="_blank"><g-image src="~/assets/images/Minna_Palmqvist-logo.png" /></a>
           <a href="https://hejalivet.com/" class="buddy" target="_blank"><g-image src="~/assets/images/hejalivet-red.png" /></a>
-          <a href="https://fatta.nu/" class="buddy" target="_blank"><g-image src="~/assets/images/fatta-logo.svg" /></a>
+          <a href="http://fatta.krig.io.hemsida.eu/" class="buddy" target="_blank"><g-image src="~/assets/images/fatta-logo.svg" /></a>
           <a href="https://mensen.se/" class="buddy" target="_blank"><g-image src="~/assets/images/mensen-logo.svg" /></a>
           <a href="https://www.djurensratt.se/" class="buddy" target="_blank"><g-image src="~/assets/images/djurensratt.png" /></a>
           <a href="https://ellinor.se/" class="buddy" target="_blank"><g-image src="~/assets/images/logo_ellinor.png" /></a>
