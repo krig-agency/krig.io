@@ -178,6 +178,7 @@
     align-items: flex-start;
     position: relative;
     height: 100vh;
+    max-height: -webkit-fill-available;
 
     .headline-mega {
       position: absolute;
@@ -222,12 +223,16 @@
         &::after {
           position: absolute;
           top: 0;
-          right: -2.5rem;
+          right: -1.5rem;
           display: inline-block;
           content: ".";
           color: blue;
           animation: 2s blink ease infinite;
           animation-delay: 1s;
+
+          @include sm {
+            right: -2.5rem;
+          }
         }
       }
     }

@@ -7,33 +7,23 @@
     </strong> -->
   </header>
   <slot/>
-  <footer class="footer">
-    <div class="footer--click">
-      <g-image class="footer--click-icon" src="~/assets/images/bye.svg" />
-    </div>
-    <div class="footer--content">
-      <p>KRIG Agency I <span><a href="tel:0739825395">073-9825395</a></span> I <span><a class="mail-link"href="mailto:hello@krig.io">hello@krig.io</a></span></p>
-      <div class="some">
-        <a href="https://www.facebook.com/krigio.agency"><g-image class="some-icon" src="~/assets/images/icon-fb.svg" /></a>
-        <a href="https://www.instagram.com/krig_agency/"><g-image class="some-icon" src="~/assets/images/icon-instagram.svg" /></a>
-        <a href="https://github.com/krig-agency"><g-image class="some-icon" src="~/assets/images/icon-github.svg" /></a>
-      </div>
-    </div>
-  </footer>
+  <SiteFooter />
 </div>
 </template>
 
 <script>
 // import IconBye from './components/icons/IconBye.vue'
 // import IconHi from './icons/IconHi.vue'
-import PostList from '../components/PostList';
+// import PostList from '../components/PostList';
+import SiteFooter from '../components/SiteFooter';
 // import Krux from '../components/Krux';
 import Krux from '../components/UxOptions';
 
 export default {
   components: {
     Krux,
-    PostList,
+    SiteFooter,
+    // PostList,
   },
   data: {
     active: false,
@@ -58,15 +48,10 @@ export default {
 
 html,
 body,
-.layout {
-  min-height: 100%;
-  background-color: #fff;
-  box-sizing: border-box;
-}
 
 .layout {
-  min-height: 100vh;
-  height: 100vh;;
+  height: 100vh;
+  max-height: -webkit-fill-available;
   background-color: #fff;
   background-image: url("~@/assets/images/krig-crew.png");
   background-size: cover;
@@ -110,7 +95,7 @@ img {
 h1 {
   position: relative;
   display: block;
-  font-size: 7.5rem;
+  font-size: 6rem;
   text-transform: uppercase;
   transition: all 0.2s ease;
   font-weight: 800;
@@ -162,101 +147,6 @@ h3 {
   font-family: din;
   src: url('../assets/fonts/din-bold.woff');
   font-weight: bold;
-}
-#mobile-toggle {
-  display: block;
-  background: green;
-}
-
-.footer {
-  position: relative;
-  right: 0;
-  left: 0;
-  width: 100vw;
-}
-
-.footer--click {
-  position: absolute;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: auto;
-  margin-left: 0;
-  width: 100vw;
-  height: 66px;
-  background-color: blue;
-  color: white;
-
-  @include mini {
-    width: 66px;
-  }
-
-  @include sm {
-    margin-left: 20px;
-  }
-}
-
-.footer--click-icon {
-  position: absolute;
-  width: 46px;
-  height: 46px;
-  animation: wave 2.1s 0.6s infinite;
-}
-
-.footer--content {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 66px;
-  background-color: white;
-  height: 66px;
-  color: blue;
-  width: auto;
-  text-align: center;
-
-  @include mini {
-    padding-left: 86px;
-    padding-right: 10px;
-    padding-top: 0;
-  }
-
-  @include sm {
-    margin: 20px;
-    padding-left: 106px;
-    padding-right: 40px;
-  }
-
-  p {
-    font-size: 14px;
-    text-align: left;
-
-    @include mini {
-      font-size: 1rem;
-    }
-  }
-}
-
-.mail-link {
-  font-weight: 600;
-}
-
-.some {
-  display: inherit;
-}
-
-.some-icon {
-  margin: 0 10px;
-  transition: all 0.2s ease;
-
-  &:hover {
-    transform: scale(1.1);
-    opacity: 0.9;
-  }
 }
 
 @keyframes wave {
