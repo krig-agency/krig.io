@@ -46,7 +46,7 @@ export default {
 <style lang="scss">
 
 .footer {
-  display: flex;
+
   position: relative;
   right: 0;
   left: 0;
@@ -54,6 +54,8 @@ export default {
   box-sizing: border-box;
 
   @include sm {
+    display: flex;
+    flex-direction: row;
     padding: 20px;
   }
 }
@@ -61,13 +63,11 @@ export default {
 .footer--click {
   position: static;
   z-index: 1;
-  flex: 0 0 66px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: auto;
+  width: 100%;
   margin-left: 0;
-  width: 100vw;
   height: 66px;
   background-color: blue;
   color: white;
@@ -82,6 +82,7 @@ export default {
 
   @include sm {
     width: 66px;
+    flex: 0 0 66px;
   }
 }
 
@@ -93,7 +94,7 @@ export default {
 }
 
 .footer--content {
-  // position: absolute;¨
+  position: absolute;
   flex: 1;
   z-index: 1;
   display: flex;
@@ -107,7 +108,7 @@ export default {
   color: blue;
   text-align: center;
   box-sizing: border-box;
-  transform: translateY(-100%);
+  transform: translateY(-200%);
   transition: transform 0.3s ease-in-out;
 
   .mail-link {
