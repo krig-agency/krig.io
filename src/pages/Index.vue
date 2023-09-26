@@ -1,30 +1,29 @@
 <template>
 	<Layout>
+		<!-- <div class="container" v-rellax data-rellax-speed="-2" data-rellax-percentage="0.8"> -->
 		<div
 			class="container rellax"
-			data-rellax-speed="-4"
+			data-rellax-speed="-3"
 			data-rellax-mobile-speed="0"
 		>
-			<!-- <section class="welcome-home" v-scroll-reveal.reset> -->
 			<section class="welcome-home">
 				<h1 class="headline-mega">
 					<span class="headline-mega__we">
-						<v-scrollin :speed="80" :misses="1">Vi</v-scrollin>
-					</span>
-					<span class="headline-mega__we">
-						<v-scrollin :speed="80" :misses="2">är</v-scrollin>
-					</span>
-					<span class="headline-mega__we">
-						<v-scrollin :speed="80" :misses="3">KRIG</v-scrollin>
+						<v-scrollin :speed="60" :misses="2">We are</v-scrollin>
 					</span>
 					<span class="headline-mega__krig">
-						<v-scrollin :speed="100" :misses="4">agency</v-scrollin>
+						<v-scrollin :speed="100" :misses="3">KRIG</v-scrollin>
+					</span>
+					<span class="headline-mega__agency">
+						<v-scrollin :speed="100" :misses="3">agency</v-scrollin>
 					</span>
 				</h1>
 			</section>
 		</div>
 
+		<!-- <div class="container" v-rellax data-rellax-speed="2" data-rellax-percentage="0.8"> -->
 		<div class="hi-there">
+			<!-- <div class="hi-there" v-scroll-reveal.reset> -->
 			<section class="content-wrap intro-puff">
 				<h2>All female Swedish digital agency.</h2>
 				<h3 class="yellow">
@@ -40,6 +39,7 @@
 			</section>
 		</div>
 
+		<!-- <div class="container" v-rellax data-rellax-speed="-2" data-rellax-percentage="0.2"> -->
 		<div class="hi-krig">
 			<div
 				class="hi-krux rellax"
@@ -47,6 +47,7 @@
 				data-rellax-mobile-speed="0"
 			>
 				<section class="content-wrap krux-puff">
+					<h2 class="hi-krux__headline">Autumn 2023!</h2>
 					<div class="content-wrap__img">
 						<g-image src="~/assets/images/krux-blue.svg" />
 					</div>
@@ -66,7 +67,6 @@
 				data-rellax-mobile-speed="0"
 			>
 				<section class="buddies-section">
-					<div class="side-quote">Selected Clients</div>
 					<a href="https://www.njorda.se/" class="buddy" target="_blank">
 						<g-image src="~/assets/images/njorda-logo.svg" />
 					</a>
@@ -110,6 +110,7 @@
 				</section>
 			</div>
 		</div>
+		<!-- <div class="container" v-rellax data-rellax-speed="2" data-rellax-percentage="0.6"> -->
 		<div class="more-things">
 			<div
 				class="insta-widget rellax"
@@ -118,6 +119,7 @@
 			>
 				<InstaPost />
 			</div>
+			<!-- <div class="hi-there" v-scroll-reveal.reset> -->
 			<div
 				class="whats-up rellax"
 				data-rellax-speed="-0.5"
@@ -189,15 +191,13 @@
 <script>
 // import PostList from '../components/PostList';
 import VScrollin from "vue-scrollin";
-import Rellax from "rellax";
 import VueScrollSnap from "vue-scroll-snap";
 import InstaPost from "../components/InstaPost";
 
 export default {
 	components: {
 		"v-scrollin": VScrollin,
-		InstaPost,
-		Rellax
+		InstaPost
 	},
 	metaInfo: {
 		title: "KRIG digital agency"
@@ -216,13 +216,10 @@ export default {
 			}
 		}
 	},
-	mounted() {
-		new Rellax(".rellax");
-	},
-	data() {
-		return {
-			active: false
-		};
+
+	el: "#app",
+	data: {
+		active: false
 	},
 	methods: {
 		mouseOver: function() {
@@ -271,13 +268,13 @@ export default {
 	}
 }
 
-// .container {
-// 	postion: static;
+.container {
+	postion: static;
 
-// 	@include sm-max {
-// 		transform: none !important;
-// 	}
-// }
+	@include sm-max {
+		transform: none !important;
+	}
+}
 
 .welcome-home {
 	display: flex;
@@ -288,7 +285,8 @@ export default {
 
 	.headline-mega {
 		position: absolute;
-		bottom: 2rem;
+		top: 50%;
+		transform: translateY(-50%);
 		left: 2rem;
 		z-index: 1;
 		margin: 0;
@@ -298,15 +296,18 @@ export default {
 		// mix-blend-mode: difference;
 
 		@include sm-max {
-			bottom: 6.5rem;
+			bottom: 2rem;
+			top: auto;
+			font-size: 3rem;
+			transform: translateY(0);
 		}
 
 		.v-scrollin {
 			display: inline-block;
-			margin-right: 2rem;
 		}
 
 		&__we {
+			display: block;
 			position: relative;
 
 			.v-scrollin {
@@ -326,15 +327,17 @@ export default {
 			position: relative;
 
 			&::after {
-				position: absolute;
-				top: 0;
-				right: -2rem;
 				display: inline-block;
 				content: ".";
+				margin-right: 0.25rem;
 				color: blue;
 				animation: 2s blink ease infinite;
 				animation-delay: 1s;
 			}
+		}
+		&__agency {
+			display: inline-block;
+			text-transform: lowercase;
 		}
 	}
 }
@@ -410,6 +413,7 @@ export default {
 	display: flex;
 	flex-direction: column;
 	min-width: 100%;
+	position: relative;
 
 	@include sm {
 		flex-direction: row;
@@ -422,20 +426,25 @@ export default {
 	}
 
 	&__headline {
+		width: 100%;
 		position: absolute;
-		top: 2rem;
+		top: -2.5rem;
 		right: 0;
+		color: white;
 		font-style: italic;
 		text-align: right;
 		text-shadow: 4px 4px 0px black;
+		white-space: no-wraps;
 
-		@include sm {
-			right: -4rem;
+		@include md {
+			top: -4.5rem;
+			right: -3rem;
 		}
 	}
 
 	&__text {
 		position: relative;
+		color: white;
 		background-color: black;
 		padding: 0.2rem 1.5rem 1rem;
 		margin: -10px 0 0 0;
@@ -516,6 +525,7 @@ export default {
 		img {
 			-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
 			filter: grayscale(100%);
+			transition: all 300ms ease;
 
 			&:hover {
 				filter: none;
@@ -527,18 +537,6 @@ export default {
 .hi-there {
 	display: flex;
 	justify-content: flex-end;
-}
-
-.side-quote {
-	position: absolute;
-	left: 2rem;
-	top: 7rem;
-	-webkit-transform: rotate(45deg);
-	-o-transform: rotate(45deg);
-	transform: rotate(45deg);
-	font-size: 9rem;
-	opacity: 0.05;
-	z-index: -1;
 }
 
 .button--cta {
@@ -557,9 +555,9 @@ export default {
 	color: yellow;
 }
 
-@keyframes blink {
-	0%,
-	100% {
+@keyframes "blink" {
+	from,
+	to {
 		opacity: 0;
 	}
 	50% {

@@ -147,13 +147,17 @@ h1 {
 	font-weight: 800;
 
 	@include mini {
-		font-size: 10rem;
+		font-size: 8rem;
 	}
 }
 
 h2 {
-	font-size: 3.25rem;
+	font-size: 2rem;
 	line-height: 1;
+
+	@include md {
+		font-size: 3.5rem;
+	}
 }
 
 h3 {
@@ -201,10 +205,14 @@ h3 {
 
 .footer {
 	position: relative;
-	bottom: 20px;
+	bottom: 0;
 	right: 0;
 	left: 0;
 	width: 100vw;
+
+	@include sm {
+		bottom: 20px;
+	}
 }
 
 .footer--click {
