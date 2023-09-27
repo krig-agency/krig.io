@@ -112,13 +112,13 @@
 		</div>
 		<!-- <div class="container" v-rellax data-rellax-speed="2" data-rellax-percentage="0.6"> -->
 		<div class="more-things">
-			<div
+			<!-- <div
 				class="insta-widget rellax"
 				data-rellax-speed="1.5"
 				data-rellax-mobile-speed="0"
 			>
 				<InstaPost />
-			</div>
+			</div> -->
 			<!-- <div class="hi-there" v-scroll-reveal.reset> -->
 			<div
 				class="whats-up rellax"
@@ -192,12 +192,10 @@
 // import PostList from '../components/PostList';
 import VScrollin from "vue-scrollin";
 import VueScrollSnap from "vue-scroll-snap";
-import InstaPost from "../components/InstaPost";
 
 export default {
 	components: {
-		"v-scrollin": VScrollin,
-		InstaPost
+		"v-scrollin": VScrollin
 	},
 	metaInfo: {
 		title: "KRIG digital agency"

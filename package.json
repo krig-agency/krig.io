@@ -9,7 +9,6 @@
 	"dependencies": {
 		"@gridsome/source-filesystem": "^0.6.2",
 		"@gridsome/transformer-remark": "^0.6.4",
-		"@zefman/gridsome-source-instagram": "^0.1.3",
 		"gridsome": "^0.7.0",
 		"gridsome-plugin-modal": "^0.1.1",
 		"gridsome-plugin-netlify-cms": "^1.0.9",
